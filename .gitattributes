@@ -1,0 +1,4 @@
+# 소스는 LF, 배치 파일은 CP949 + CRLF
+* text=auto
+*.bat text eol=crlf
+*.ps1 text eol=crlf
