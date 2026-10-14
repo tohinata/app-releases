@@ -1,0 +1,12 @@
+{
+    "app":  "riichiguide",
+    "name":  "리치 마작 가이드",
+    "platform":  "android",
+    "version":  "1.4.3",
+    "versionCode":  10,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/riichiguide-v1.4.3/riichi-mahjong-guide-1.4.3.apk",
+    "sha256":  "1b7704b77f5be9317f583b12f2b5e87c7e26ea6124c9ce2ffd5901a733532951",
+    "size":  7934134,
+    "notes":  "- ?낅뜲?댄듃 踰꾩쟾 異붽?\n- 諛곗튂\n- commit.bat 異붽? ???붾툝?대┃?쇰줈 而ㅻ컠?섍린\n- push.bat 異붽? ???붾툝?대┃?쇰줈 GitHub ???щ━湲?由ъ튂 留덉옉 ?먯닔 怨꾩궛湲?v1.4.3 珥덇린 而ㅻ컠",
+    "publishedAt":  "2026-10-14T09:46:16+09:00"
+}
