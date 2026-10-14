@@ -1,40 +1,23 @@
 # 비번 금고 모바일
 
-## ⬇ [PassVaultMobile-0.1.0.apk 받기](https://github.com/tohinata/app-releases/releases/download/passvaultmobile-v0.1.0/PassVaultMobile-0.1.0.apk)
+## ⬇ [PassVaultMobile-0.1.1.apk 받기](https://github.com/tohinata/app-releases/releases/download/passvaultmobile-v0.1.1/PassVaultMobile-0.1.1.apk)
 
-안드로이드 · 버전 **0.1.0** · 5.4MB · 2026-10-14
+안드로이드 · 버전 **0.1.1** · 5.4MB · 2026-10-14
 
 폰에서 이 페이지를 열고 위 링크를 누르면 APK 를 받습니다. 받은 파일을 열어 설치하세요.
 
 - 처음 한 번 「출처를 알 수 없는 앱 설치」 허용이 필요합니다.
 - 한 번 설치하면 그다음부터는 앱이 알아서 새 버전을 확인하고 업데이트합니다.
 
-## 바뀐 점 (0.1.0)
+## 바뀐 점 (0.1.1)
 
-### Added — 첫 버전
-- **항목 종류**: 로그인(사이트 · 앱) · 카드 · 은행 계좌 · 집 · 주소 · 와이파이 · 신분증 · 번호 · 보안 메모 · 기타(직접 만들기)
-  - 종류마다 기본 칸, 칸 추가 · 지우기 · 순서 바꾸기, 칸마다 종류와 「가림」
-- **등록 · 편집 · 삭제 · 복사**. 즐겨찾기, 분류 칩, 검색(가린 칸 값은 찾지 않음). 목록에서 길게 누르면 빠른 복사 메뉴
-- **가림 칸은 기본으로 ******* — 눈 버튼으로 본 값은 n초 뒤 다시 가림 (기본 10초). 보이는 상태는 저장하지 않아
-  앱을 벗어나거나(홈 · 다른 앱) 다시 켜면 늘 가린 채로
-- **복사**: 토스트에는 「아이디」 복사했습니다 처럼 칸 이름과 안내만 — 값은 보이지 않음.
-  안드로이드 13+ 시스템 클립보드 미리보기도 '민감한 내용'으로 가림. n초 뒤 클립보드에서 지움 (기본 10초, 직접 입력 가능)
-- **암호화**: 마스터 비밀번호 → PBKDF2-HMAC-SHA256(21만 번) → AES-256-GCM. PC(비번 금고)와 같은 파일 형식
-- **잠금 화면**: 마스터 비밀번호 / 패턴 / 지문. 패턴 5번 틀리면 마스터 비밀번호로만. 패턴 · 지문 키는 안드로이드 키스토어에
-- **자동 잠금**: 앱을 벗어났다가(홈 · 다른 앱) n초 이상 지나서 돌아오면 잠금 화면에서 시작 (기본 10초 · 바로 ~ 5분 · 안 함), 화면을 켜 둔 채 5분 동안 만지지 않아도
-- **화면 캡처 막기** (기본 켬), 구글 클라우드 백업에서 제외
-- **비번 생성기**: 무작위 / **내 비번 패턴 따라** (설정에서 켜는 옵션) — 금고의 모든 사이트 · 앱 · 계좌 · 와이파이 비밀번호를 분석해
-  자주 쓰는 형태로 새로 만든다. 「자주 쓰는 단어 넣기」 하위 옵션, 강도 표시
-- **구글 드라이브 동기화**: 구글 드라이브의 암호화된 금고 파일 하나를 연결 (PC 와 같은 파일). 저장 · 열 때 자동으로 합침
-  - 처음 실행 때 「구글 드라이브의 금고 불러오기」로 PC 금고를 그대로 씀
-- **백업**: 여는 날마다 자동(폰 안), 내보내기, 다른 금고 파일 가져오기(합치기)
-- **설정**: 화면(테마 시스템 · 다크 · 라이트) · 복사 · 잠금 · 비번 생성기 · 동기화 · 백업 · 앱 정보(개발자 · 버전 · 수정 이력 · 업데이트 확인)
-- **대문자 고정 확인**: 화면 키보드의 대문자 고정 상태는 앱이 알 수 없어, 영문이 모두 대문자인 비밀번호를 저장하려 하면 확인을 묻는다 (새 금고의 마스터 비밀번호는 막음)
-- 자동 업데이트 (app-releases)
+- 수정 사항 반영
 
 ## 이전 버전
 
-없음
+| 버전 | 날짜 |
+|---|---|
+| [0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0](https://github.com/tohinata/app-releases/releases/tag/passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0) | 2026-10-14 |
 
 ---
 [← 전체 앱 목록](../README.md)
