@@ -24,8 +24,21 @@ $xml = [IO.File]::ReadAllText($proj)
 $ver = [regex]::Match($xml, '<Version>\s*([0-9]+\.[0-9]+\.[0-9]+)').Groups[1].Value
 if (-not $ver) { Fail "$Csproj 에 <Version>1.2.3</Version> 이 없습니다." }
 
-Step "$Name $ver 릴리스"
 Assert-Gh
+Assert-Committed $Project
+Set-Undo $Project @(($Csproj -replace '\\', '/'), 'CHANGELOG.md')
+$prevM = Get-PrevManifest $App
+# 이번 릴리스 버전 정하기 (이미 올린 버전이면 끝자리 +1 제안, Enter = 그대로)
+$old = $ver
+$ver = Choose-Version $App $ver
+if ($ver -ne $old) {
+    Edit-File $proj '<Version>[^<]*</Version>' "<Version>$ver</Version>"
+    Edit-File $proj '<AssemblyVersion>[^<]*</AssemblyVersion>' "<AssemblyVersion>$ver.0</AssemblyVersion>"
+    Edit-File $proj '<FileVersion>[^<]*</FileVersion>' "<FileVersion>$ver.0</FileVersion>"
+    Say "$Csproj 를 고쳤습니다: $ver"
+}
+Ensure-Changelog $Project $ver $prevM
+Step "$Name $ver 릴리스"
 Assert-NewTag "$App-v$ver"
 if (-not (Get-Command dotnet -ErrorAction SilentlyContinue)) { Fail ".NET SDK(dotnet)를 찾지 못했습니다." }
 
@@ -52,4 +65,6 @@ if (Test-Path $zip) { Remove-Item $zip -Force }
 # ---------------------------------------------------------------- 올리기
 $notes = Get-Notes (Join-Path $Project 'CHANGELOG.md') $ver
 $keepList = @($Keep -split ';' | Where-Object { $_ })
+Clear-Undo   # 여기부터는 올라가므로 되돌리지 않는다
 Publish-Release -App $App -Name $Name -Platform 'windows' -Version $ver -VersionCode 0 -File $zip -Notes $notes -Exe $Exe -Keep $keepList
+Commit-Version $Project @(($Csproj -replace '\\', '/'), 'CHANGELOG.md') $ver

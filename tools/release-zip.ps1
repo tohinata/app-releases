@@ -2,7 +2,7 @@
 #   powershell -File release-zip.ps1 -Project <폴더> -App <앱키> -Name <이름> -Platform web|chrome
 #     -VersionFile version.txt            (버전 한 줄)  또는  manifest.json  (크롬 확장 — "version" 값)
 #     -Exclude ".git;dist;*.bat;*.md"     zip 에서 뺄 것 (파일 · 폴더 이름 패턴, 경로의 어느 부분이든)
-#     -Include "run-app.bat"              -Exclude 에 걸려도 넣을 것
+#     -Include "1-1_실행.bat"              -Exclude 에 걸려도 넣을 것
 #     -Keep "a;b"                         업데이트할 때 이미 있으면 덮어쓰지 않을 파일
 param(
     [Parameter(Mandatory = $true)][string]$Project,
@@ -29,8 +29,20 @@ if ($VersionFile -like '*.json') {
 }
 if (-not $ver) { Fail "$VersionFile 에서 버전을 찾지 못했습니다." }
 
-Step "$Name $ver 릴리스"
 Assert-Gh
+Assert-Committed $Project
+Set-Undo $Project @($VersionFile, 'CHANGELOG.md')
+$prevM = Get-PrevManifest $App
+# 이번 릴리스 버전 정하기 (이미 올린 버전이면 끝자리 +1 제안, Enter = 그대로)
+$old = $ver
+$ver = Choose-Version $App $ver
+if ($ver -ne $old) {
+    if ($VersionFile -like '*.json') { Edit-File $vf '("version"\s*:\s*)"[^"]+"' "`${1}`"$ver`"" }
+    else { [IO.File]::WriteAllText($vf, "$ver`n") }
+    Say "$VersionFile 를 고쳤습니다: $ver"
+}
+Ensure-Changelog $Project $ver $prevM
+Step "$Name $ver 릴리스"
 Assert-NewTag "$App-v$ver"
 
 # ---------------------------------------------------------------- zip
@@ -62,4 +74,6 @@ try {
 # ---------------------------------------------------------------- 올리기
 $notes = Get-Notes (Join-Path $Project 'CHANGELOG.md') $ver
 $keepList = @($Keep -split ';' | Where-Object { $_ })
+Clear-Undo   # 여기부터는 올라가므로 되돌리지 않는다
 Publish-Release -App $App -Name $Name -Platform $Platform -Version $ver -VersionCode 0 -File $zip -Notes $notes -Keep $keepList
+Commit-Version $Project @($VersionFile, 'CHANGELOG.md') $ver

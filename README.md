@@ -3,45 +3,48 @@
 온천장 (tohinata) 의 앱 배포용 공개 저장소입니다. **소스는 없고** 설치 파일(릴리스)과 버전 정보만 있습니다.
 각 앱은 실행할 때 `manifest/<앱키>.json` 을 읽어 새 버전이 있으면 업데이트를 묻습니다.
 
-| 앱 | 앱키 | 종류 |
-|---|---|---|
-| 싱크 스튜디오 모바일 | `subsyncmobile` | 안드로이드 |
-| 따라말해 | `midrepeat` | 안드로이드 |
-| 오토클릭 | `autoclicker` | 안드로이드 |
-| 인스타 받기 | `instaget` | 안드로이드 |
-| 싱크 스튜디오 | `subsyncstudio` | 윈도우 |
-| 받아쓰기 스튜디오 | `middictation` | 윈도우 |
-| 서평 스튜디오 | `bookreviewstudio` | 윈도우 |
-| MKV 일괄 병합기 | `mkvbatchmerger` | 윈도우 |
-| 파일 이름 규칙 | `mediarenamer` | 윈도우 |
-| 앱테크 체크 | `apptech` | 안드로이드 (Capacitor) |
-| 도서 서평 관리 | `bookreviewapp` | 안드로이드 (Capacitor) |
-| 태그 복사 | `tagcopy` | 안드로이드 (Capacitor) |
-| 리치 마작 가이드 | `riichiguide` | 안드로이드 (Capacitor) |
-| 신장의 야망 16 한자 매뉴얼 | `nobunaga16` | 윈도우 (HTML, run-app.bat) |
-| 댓글 문구 순서 복사기 | `commentcopier` | 크롬 확장 (알림까지) |
-| 네이버 페이 URL 파서 | `urlparser` | 크롬 확장 (알림까지) |
+## 받기
+
+앱 이름을 누르면 그 앱 페이지(받기 링크 · 설치 방법 · 바뀐 점 · 이전 버전)로 갑니다. 「받기」를 누르면 바로 내려받습니다.
+
+<!-- apps:start -->
+| 앱 (누르면 앱 페이지) | 종류 | 최신 | 받기 |
+|---|---|---|---|
+| [싱크 스튜디오 모바일](apps/subsyncmobile.md) | 안드로이드 | 0.1.1 | [⬇ SubSyncMobile-0.1.1.apk](https://github.com/tohinata/app-releases/releases/download/subsyncmobile-v0.1.1/SubSyncMobile-0.1.1.apk) |
+| [따라말해](apps/midrepeat.md) | 안드로이드 | 0.12.0 | [⬇ MidRepeat-0.12.0.apk](https://github.com/tohinata/app-releases/releases/download/midrepeat-v0.12.0/MidRepeat-0.12.0.apk) |
+| [오토클릭](apps/autoclicker.md) | 안드로이드 | 1.11.0 | [⬇ AutoClicker-1.11.0.apk](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.11.0/AutoClicker-1.11.0.apk) |
+| [인스타 받기](apps/instaget.md) | 안드로이드 | 0.1.0 | [⬇ InstaGet-0.1.0.apk](https://github.com/tohinata/app-releases/releases/download/instaget-v0.1.0/InstaGet-0.1.0.apk) |
+| [앱테크 체크](apps/apptech.md) | 안드로이드 | 1.13.0 | [⬇ apptech-app-1.13.0.apk](https://github.com/tohinata/app-releases/releases/download/apptech-v1.13.0/apptech-app-1.13.0.apk) |
+| 도서 서평 관리 | 안드로이드 | - | 아직 없음 |
+| 태그 복사 | 안드로이드 | - | 아직 없음 |
+| [리치 마작 가이드](apps/riichiguide.md) | 안드로이드 | 1.4.3 | [⬇ riichi-mahjong-guide-1.4.3.apk](https://github.com/tohinata/app-releases/releases/download/riichiguide-v1.4.3/riichi-mahjong-guide-1.4.3.apk) |
+| [싱크 스튜디오](apps/subsyncstudio.md) | 윈도우 | 0.1.1 | [⬇ subsyncstudio-0.1.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.1/subsyncstudio-0.1.1-win-x64.zip) |
+| [받아쓰기 스튜디오](apps/middictation.md) | 윈도우 | 0.9.1 | [⬇ middictation-0.9.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.1/middictation-0.9.1-win-x64.zip) |
+| 서평 스튜디오 | 윈도우 | - | 아직 없음 |
+| [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.0 | [⬇ mkvbatchmerger-1.0.0-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.0/mkvbatchmerger-1.0.0-win-x64.zip) |
+| 파일 이름 규칙 | 윈도우 | - | 아직 없음 |
+| 신장의 야망 16 한자 매뉴얼 | 윈도우 (HTML) | - | 아직 없음 |
+| 댓글 문구 순서 복사기 | 크롬 확장 | - | 아직 없음 |
+| 네이버 페이 URL 파서 | 크롬 확장 | - | 아직 없음 |
+<!-- apps:end -->
 
 ---
 
 ## 새 버전 올리는 법
 
-1. 프로젝트에서 버전을 올린다
-   - 안드로이드: `app/build.gradle.kts` 의 `versionCode` (+1) 와 `versionName`
-   - Capacitor 앱: `android/app/build.gradle` 의 `versionCode` (+1) 와 `versionName`
-   - 윈도우: `.csproj` 의 `<Version>`
-   - HTML 앱: `version.txt` · 크롬 확장: `manifest.json` 의 `version`
-2. `CHANGELOG.md` 맨 위에 `## 0.2.0 — 날짜` 절을 쓴다 (이 부분이 업데이트 안내 창에 나온다)
-3. 프로젝트 폴더의 **`release.bat`** 실행 — 빌드 → 이 저장소에 릴리스 → `manifest` 갱신까지 한 번에
+프로젝트 폴더의 **`4-1_새버전배포.bat`** 하나면 된다.
 
-같은 버전을 두 번 올리려 하면 멈춥니다 (버전을 먼저 올리세요).
+1. 이번 릴리스 버전을 제안한다 — 지금 버전을 이미 올렸으면 끝자리 +1. **Enter** = 그대로, `1.3.0` 처럼 직접 입력도 된다
+2. 버전 파일을 고친다 (안드로이드 `versionCode` +1 · `versionName`, 윈도우 `<Version>` 등, HTML 앱 `version.txt`, 크롬 확장 `manifest.json`)
+3. `CHANGELOG.md` 에 그 버전 절이 없으면 지난 릴리스 이후 커밋 메시지로 만든다 (미리 써 두면 그대로). 이 내용이 업데이트 안내 창에 나온다
+4. 빌드 → 이 저장소에 릴리스 (설명 맨 위에 받기 링크) → `manifest` · 다운로드 페이지(README 표, `apps/<앱키>.md`) 갱신 → 프로젝트에서 버전 파일 · CHANGELOG 커밋 · 올리기
 
 ## 처음 한 번
 
 1. GitHub CLI 설치 · 로그인: `winget install GitHub.cli` → 새 창에서 `gh auth login`
-2. 이 폴더의 **`init.bat`** — 공개 저장소 `tohinata/app-releases` 를 만들고 올린다
+2. 이 폴더의 **`0-1_공개저장소만들기.bat`** — 공개 저장소 `tohinata/app-releases` 를 만들고 올린다
 3. 안드로이드 기기: 지금 깔린 앱(디버그 키로 서명됨)을 **한 번 지우고** 새 버전을 설치한다
-   - 이제부터 `install.bat` 도 배포용 키로 서명하므로, USB 설치본과 업데이트본이 서로 덮어써진다
+   - 이제부터 `2-1_폰설치.bat` 도 배포용 키로 서명하므로, USB 설치본과 업데이트본이 서로 덮어써진다
    - 각 프로젝트의 `keystore\` 와 `keystore.properties` 는 꼭 백업 (잃어버리면 다시 지우고 깔아야 함)
 
 ## 동작
@@ -58,25 +61,25 @@ manifest/<앱키>.json
 ```
 
 - **안드로이드** (`client/android/AppUpdater.kt`): 앱 시작 때 확인 → 「업데이트」 → APK 받기(진행 표시) → SHA-256 · 패키지 확인 → 설치 창.
-  기기마다 처음 한 번 「출처를 알 수 없는 앱 설치」 허용이 필요합니다. 앱 정보 화면의 버전을 누르면 바로 확인합니다.
+  기기마다 처음 한 번 「출처를 알 수 없는 앱 설치」 허용이 필요합니다. 앱 정보 화면의 「업데이트 확인」 버튼으로 바로 확인합니다.
 - **윈도우** (`client/windows/AppUpdater.cs`): 시작 때 확인 → 「예」 → 프로그램이 닫히고 업데이트 창(PowerShell)이
   zip 받기 → SHA-256 확인 → 파일 덮어쓰기(실패하면 원래대로) → 다시 실행. 로그: `%TEMP%\coarsoft-update\update.log`
 
 - **Capacitor 앱** (`client/android-java/`): 안드로이드와 같다 (Java 판).
-- **HTML 앱** (`client/web/update.ps1`): `run-app.bat` 이 열기 전에 확인 → 받기 → 덮어쓰기. 폴더가 git 저장소(개발 폴더)면 건너뛴다.
+- **HTML 앱** (`client/web/update.ps1`): `1-1_실행.bat` 이 열기 전에 확인 → 받기 → 덮어쓰기. 폴더가 git 저장소(개발 폴더)면 건너뛴다.
 - **크롬 확장** (`client/chrome/update-check.js`): 압축 해제 설치본은 크롬이 스스로 바꿀 수 없어서, 아이콘에 NEW 를 띄우고
   팝업 맨 위에 「받기」(zip)와 덮어쓰는 방법을 보여 준다.
 
 ## 공통 코드 고치기
 
-`client/` 의 원본을 고친 뒤 **`sync-clients.bat`** — 모든 앱 프로젝트에 다시 복사합니다 (앱 목록: `tools/apps.ps1`).
+`client/` 의 원본을 고친 뒤 **`9-1_공통업데이터복사.bat`** — 모든 앱 프로젝트에 다시 복사합니다 (앱 목록: `tools/apps.ps1`).
 
 | 파일 | 하는 일 |
 |---|---|
-| `init.bat` | 처음 한 번 — 공개 저장소 만들고 올리기 |
-| `sync-clients.bat` | 공통 업데이터 코드를 모든 앱에 복사 |
-| `tools/release-android.ps1` | 안드로이드 릴리스 (각 앱의 `release.bat` 이 부른다) |
-| `tools/release-windows.ps1` | 윈도우 릴리스 (각 앱의 `release.bat` 이 부른다) |
+| `0-1_공개저장소만들기.bat` | 처음 한 번 — 공개 저장소 만들고 올리기 |
+| `9-1_공통업데이터복사.bat` | 공통 업데이터 코드를 모든 앱에 복사 |
+| `tools/release-android.ps1` | 안드로이드 릴리스 (각 앱의 `4-1_새버전배포.bat` 이 부른다) |
+| `tools/release-windows.ps1` | 윈도우 릴리스 (각 앱의 `4-1_새버전배포.bat` 이 부른다) |
 | `tools/release-capacitor.ps1` | Capacitor 앱 릴리스 |
 | `tools/release-zip.ps1` | HTML 앱 · 크롬 확장 릴리스 (zip) |
 | `tools/common.ps1` | 릴리스 · manifest 공통 |

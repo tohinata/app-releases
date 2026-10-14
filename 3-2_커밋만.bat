@@ -4,7 +4,7 @@ rem  This file is saved in CP949 (Korean Windows console codepage).
 rem  Do NOT re-save it as UTF-8 -- the messages below will be garbled.
 rem
 rem  What this does: shows what changed, asks for a commit message,
-rem  commits everything (git add -A), then offers to run push.bat.
+rem  commits everything (git add -A), then offers to run 3-3_올리기만.bat.
 rem  It never amends, never rebases, never forces.
 rem =====================================================================
 setlocal enabledelayedexpansion
@@ -83,16 +83,16 @@ git log --oneline -1
 echo.
 
 rem ------------------------------------------------------------ 이어서 올리기
-if not exist "push.bat" goto :done
-call :ask_yn " 이어서 GitHub 에 올릴까요? push.bat 을 실행합니다."
+if not exist "3-3_올리기만.bat" goto :done
+call :ask_yn " 이어서 GitHub 에 올릴까요? 3-3_올리기만.bat 을 실행합니다."
 if /i "%YN%"=="N" goto :done
 endlocal
-call push.bat
+call 3-3_올리기만.bat
 exit /b %errorlevel%
 
 :done
 echo.
-echo  GitHub 에 올리려면 push.bat 을 실행하세요.
+echo  GitHub 에 올리려면 3-3_올리기만.bat 을 실행하세요.
 echo.
 pause
 endlocal

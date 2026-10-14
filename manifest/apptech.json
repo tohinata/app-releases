@@ -1,12 +1,12 @@
 {
-    "app":  "apptech",
-    "name":  "앱테크 체크",
-    "platform":  "android",
-    "version":  "1.13.0",
-    "versionCode":  42,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/apptech-v1.13.0/apptech-app-1.13.0.apk",
-    "sha256":  "6a294c4ce17a593bca35cb3a86d494a6c18977d62aa0f74bfceedd8fe129b563",
-    "size":  3763461,
-    "notes":  "- ?낅뜲?댄듃 湲곕뒫 異붽?\n- djqepdlxm\n- commit.bat 異붽? ???붾툝?대┃?쇰줈 而ㅻ컠?섍린\n- push.bat 異붽? ???붾툝?대┃?쇰줈 GitHub ???щ━湲??깊뀒??泥댄겕 v1.13.0 珥덇린 而ㅻ컠",
-    "publishedAt":  "2026-10-14T09:46:44+09:00"
+    "app": "apptech",
+    "name": "앱테크 체크",
+    "platform": "android",
+    "version": "1.13.0",
+    "versionCode": 42,
+    "url": "https://github.com/tohinata/app-releases/releases/download/apptech-v1.13.0/apptech-app-1.13.0.apk",
+    "sha256": "6a294c4ce17a593bca35cb3a86d494a6c18977d62aa0f74bfceedd8fe129b563",
+    "size": 3763461,
+    "notes": "- 업데이트 기능 추가\n- djqepdlxm\n- commit.bat 추가 — 더블클릭으로 커밋하기\n- push.bat 추가 — 더블클릭으로 GitHub 에 올리기\n- 앱테크 체크 v1.13.0 초기 커밋",
+    "publishedAt": "2026-10-14T09:46:44+09:00"
 }

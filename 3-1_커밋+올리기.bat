@@ -4,8 +4,8 @@ rem  This file is saved in CP949 (Korean Windows console codepage).
 rem  Do NOT re-save it as UTF-8 -- the messages below will be garbled.
 rem
 rem  What this does: commit (if anything changed) and then push, in one go.
-rem    commit-push.bat                  asks for a message
-rem    commit-push.bat "메시지"    uses the given message
+rem    3-1_커밋+올리기.bat                  asks for a message
+rem    3-1_커밋+올리기.bat "메시지"    uses the given message
 rem  It never rebases, never forces, never discards.
 rem =====================================================================
 setlocal enabledelayedexpansion
@@ -144,7 +144,7 @@ exit /b 1
 
 :no_repo
 echo.
-echo  이 폴더는 git 저장소가 아닙니다. 먼저 github-init.bat 을 한 번 실행하세요.
+echo  이 폴더는 git 저장소가 아닙니다. 먼저 0-1_깃허브처음연결.bat 을 한 번 실행하세요.
 echo.
 pause
 endlocal
@@ -152,7 +152,7 @@ exit /b 1
 
 :no_remote
 echo.
-echo  올릴 곳(origin)이 없습니다. 먼저 github-init.bat 을 한 번 실행하세요.
+echo  올릴 곳(origin)이 없습니다. 먼저 0-1_깃허브처음연결.bat 을 한 번 실행하세요.
 echo.
 pause
 endlocal

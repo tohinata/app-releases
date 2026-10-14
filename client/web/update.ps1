@@ -1,7 +1,7 @@
 ﻿# 공통 업데이터 (윈도우 · 폴더째 배포하는 HTML 앱용).
 #
-# 원본: app-releases/client/web/update.ps1 — 고칠 때는 원본을 고치고 sync-clients.bat 으로 다시 복사한다.
-# 실행 배치(run-app.bat)가 앱을 열기 전에 부른다:
+# 원본: app-releases/client/web/update.ps1 — 고칠 때는 원본을 고치고 9-1_공통업데이터복사.bat 으로 다시 복사한다.
+# 실행 배치(1-1_실행.bat)가 앱을 열기 전에 부른다:
 #   powershell -NoProfile -ExecutionPolicy Bypass -File update.ps1 -App <앱키> -Name <이름>
 #
 # 같은 폴더의 version.txt 와 공개 저장소 tohinata/app-releases 의 manifest/<앱키>.json 을 비교해

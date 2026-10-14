@@ -2,7 +2,7 @@
  * 공통 새 버전 알림 (크롬 확장).
  *
  * 원본: app-releases/client/chrome/update-check.js — 고칠 때는 원본을 고치고
- * app-releases/sync-clients.bat 으로 모든 확장에 다시 복사한다.
+ * app-releases/9-1_공통업데이터복사.bat 으로 모든 확장에 다시 복사한다.
  *
  * 압축 해제로 설치한 확장은 크롬이 스스로 바꿔 넣지 못한다. 그래서 새 버전을 확인해
  * 아이콘에 NEW 를 띄우고, 팝업 맨 위에 「받기」 안내를 보여 주는 데까지 한다.

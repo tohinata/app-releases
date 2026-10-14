@@ -1,13 +1,13 @@
 {
-    "app":  "mkvbatchmerger",
-    "name":  "MKV 일괄 병합기",
-    "platform":  "windows",
-    "version":  "1.0.0",
-    "versionCode":  0,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.0/mkvbatchmerger-1.0.0-win-x64.zip",
-    "sha256":  "c31c720e57418d310a13e1e6a931e0894a0cd594f461e93530229caaac106850",
-    "size":  60455645,
-    "notes":  "- ?낅뜲?댄듃 踰꾩쟾 異붽?\n- commit.bat 異붽? ???붾툝?대┃?쇰줈 而ㅻ컠?섍린\n- ?먮쭑 留ㅼ묶: ?묐몢 ?レ옄 洹쒖튃??\u0027媛숈씠 異붽???臾띠쓬\u0027 洹쒖튃?쇰줈 援먯껜\n- push.bat 異붽? ???붾툝?대┃?쇰줈 GitHub ???щ━湲??먮쭑 留ㅼ묶???묐몢 ?レ옄쨌媛숈? ?대뜑 ?④퀎 異붽? (a.mkv ??a1.srt)\n- ?먮쭑 留ㅼ묶 ?섏젙: ?대쫫??媛숈? ?뚯씪 留ㅼ묶 + ?쇰낯??以묎뎅???붿닔 + ?먮낯 援먯껜 紐⑤뱶\n- MKV ?쇨큵 蹂묓빀湲?v1.0.0",
-    "publishedAt":  "2026-10-14T09:45:01+09:00",
-    "exe":  "MkvBatchMerger.exe"
+    "app": "mkvbatchmerger",
+    "name": "MKV 일괄 병합기",
+    "platform": "windows",
+    "version": "1.0.0",
+    "versionCode": 0,
+    "url": "https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.0/mkvbatchmerger-1.0.0-win-x64.zip",
+    "sha256": "c31c720e57418d310a13e1e6a931e0894a0cd594f461e93530229caaac106850",
+    "size": 60455645,
+    "notes": "- 업데이트 버전 추가\n- commit.bat 추가 — 더블클릭으로 커밋하기\n- 자막 매칭: 접두 숫자 규칙을 '같이 추가한 묶음' 규칙으로 교체\n- push.bat 추가 — 더블클릭으로 GitHub 에 올리기\n- 자막 매칭에 접두 숫자·같은 폴더 단계 추가 (a.mkv ↔ a1.srt)\n- 자막 매칭 수정: 이름이 같은 파일 매칭 + 일본어/중국어 화수 + 원본 교체 모드\n- MKV 일괄 병합기 v1.0.0",
+    "publishedAt": "2026-10-14T09:45:01+09:00",
+    "exe": "MkvBatchMerger.exe"
 }

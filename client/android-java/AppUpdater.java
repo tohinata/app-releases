@@ -40,7 +40,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 공통 앱 업데이터 (안드로이드 · Java 판 — Capacitor 앱용).
  *
  * 원본: app-releases/client/android-java/AppUpdater.java — 고칠 때는 원본을 고치고
- * app-releases/sync-clients.bat 으로 모든 앱에 다시 복사한다. Kotlin 판(client/android)과 동작이 같다.
+ * app-releases/9-1_공통업데이터복사.bat 으로 모든 앱에 다시 복사한다. Kotlin 판(client/android)과 동작이 같다.
  *
  * 공개 저장소 tohinata/app-releases 의 manifest/<앱키>.json 을 읽어 지금보다 versionCode 가 크면
  * 「업데이트」를 묻고, APK 를 받아 확인(SHA-256 · 패키지 이름)한 뒤 안드로이드 설치 창을 띄운다.
@@ -72,6 +72,7 @@ public final class AppUpdater {
         track(activity);
         if (checkedThisRun) return;
         checkedThisRun = true;
+        reportUpdated(activity);
         check(activity, appKey, false);
     }
 
@@ -233,7 +234,7 @@ public final class AppUpdater {
             final String err = error;
             main.post(() -> {
                 try { dialog.dismiss(); } catch (Exception ignored) {}
-                if (err == null) install(activity, file);
+                if (err == null) install(activity, file, info);
                 else if (!err.isEmpty()) toast(app, err);
             });
         }).start();
@@ -305,7 +306,7 @@ public final class AppUpdater {
     }
 
     /** 받은 APK 를 설치 세션에 넣는다. 화면이 회전 · 종료돼도 진행되도록 앱 Context 만 쓴다. */
-    private static void install(Activity activity, final File file) {
+    private static void install(final Activity activity, final File file, final Info info) {
         final Context ctx = activity.getApplicationContext();
         final PackageManager pm = ctx.getPackageManager();
         PackageInfo archive = pm.getPackageArchiveInfo(file.getPath(), 0);
@@ -322,8 +323,9 @@ public final class AppUpdater {
                 params.setAppPackageName(ctx.getPackageName());
                 // Android 12+: 이 앱이 스스로 설치한 적이 있으면 확인 창 없이 업데이트될 수 있다
                 if (Build.VERSION.SDK_INT >= 31) params.setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED);
-                int id = installer.createSession(params);
+                final int id = installer.createSession(params);
                 sessionId = id;
+                main.post(() -> showInstalling(activity, id, info.versionName));
                 try (PackageInstaller.Session s = installer.openSession(id)) {
                     try (OutputStream out = s.openWrite("app.apk", 0, file.length());
                          InputStream in = new FileInputStream(file)) {
@@ -335,6 +337,9 @@ public final class AppUpdater {
                     int flags = PendingIntent.FLAG_UPDATE_CURRENT | (Build.VERSION.SDK_INT >= 31 ? PendingIntent.FLAG_MUTABLE : 0);
                     Intent i = new Intent(ctx, UpdateReceiver.class).setPackage(ctx.getPackageName());
                     PendingIntent pi = PendingIntent.getBroadcast(ctx, id, i, flags);
+                    // 다음 실행 때 「업데이트했습니다」를 알리려고 적어 둔다
+                    ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
+                        .putLong("pendingCode", info.versionCode).putString("pendingName", info.versionName).apply();
                     s.commit(pi.getIntentSender());
                     sessionId = -1;   // 커밋했으면 결과는 UpdateReceiver 가 받는다
                 }
@@ -343,9 +348,70 @@ public final class AppUpdater {
                 if (sessionId != -1) {
                     try { installer.abandonSession(sessionId); } catch (Exception ignored) {}
                 }
-                main.post(() -> toast(ctx, "설치를 시작하지 못했습니다: " + e.getMessage()));
+                main.post(() -> { hideInstalling(); toast(ctx, "설치를 시작하지 못했습니다: " + e.getMessage()); });
             }
         }).start();
+    }
+
+    // ---------------------------------------------------------------- 설치 중 표시 · 끝난 뒤 알림
+    // 설치 확인 창에서 [업데이트]를 누른 뒤에도 설치는 몇 초~수십 초 걸린다. 그동안 「설치 중」 창을 띄워 두고,
+    // 설치가 끝나면 안드로이드가 이 앱을 닫는다. 다시 열면 「업데이트했습니다」를 알려 준다.
+
+    private static final String PREFS = "app_updater";
+    private static AlertDialog installingDialog;
+
+    private static void showInstalling(Activity activity, final int sessionId, String versionName) {
+        Activity a = resumed == null ? null : resumed.get();
+        if (a == null || a.isFinishing() || a.isDestroyed()) a = activity;
+        if (a.isFinishing() || a.isDestroyed()) return;
+        hideInstalling();
+        int pad = (int) (20 * a.getResources().getDisplayMetrics().density);
+        TextView label = new TextView(a);
+        label.setText("새 버전 " + versionName + " 을(를) 설치하고 있습니다.\n\n"
+            + "· 설치 확인 창이 뜨면 [업데이트]를 누르세요.\n"
+            + "· 끝나면 앱이 저절로 닫힙니다. 아이콘을 눌러 다시 여세요.");
+        ProgressBar bar = new ProgressBar(a, null, android.R.attr.progressBarStyleHorizontal);
+        bar.setIndeterminate(true);
+        LinearLayout box = new LinearLayout(a);
+        box.setOrientation(LinearLayout.VERTICAL);
+        box.setPadding(pad, pad / 2, pad, 0);
+        box.addView(label);
+        box.addView(bar);
+        installingDialog = new AlertDialog.Builder(a)
+            .setTitle("업데이트 설치 중")
+            .setView(box)
+            .setCancelable(false)
+            .setNegativeButton("숨기기", null)
+            .show();
+
+        final PackageInstaller installer = a.getApplicationContext().getPackageManager().getPackageInstaller();
+        installer.registerSessionCallback(new PackageInstaller.SessionCallback() {
+            @Override public void onCreated(int id) {}
+            @Override public void onBadgingChanged(int id) {}
+            @Override public void onActiveChanged(int id, boolean active) {}
+            @Override public void onProgressChanged(int id, float progress) {}
+            @Override public void onFinished(int id, boolean success) {
+                if (id != sessionId) return;
+                installer.unregisterSessionCallback(this);
+                // 성공이면 곧 이 앱이 닫힌다. 취소 · 실패는 UpdateReceiver 가 알려 준다.
+                if (!success) hideInstalling();
+            }
+        }, main);
+    }
+
+    private static void hideInstalling() {
+        try { if (installingDialog != null) installingDialog.dismiss(); } catch (Exception ignored) {}
+        installingDialog = null;
+    }
+
+    /** 지난번에 설치를 시작한 버전으로 바뀌었으면 알려 준다 (취소했으면 조용히 지운다) */
+    private static void reportUpdated(Activity activity) {
+        android.content.SharedPreferences sp = activity.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+        long code = sp.getLong("pendingCode", 0);
+        if (code <= 0) return;
+        String name = sp.getString("pendingName", "");
+        sp.edit().remove("pendingCode").remove("pendingName").apply();
+        if (currentVersionCode(activity) >= code) toast(activity, "새 버전 " + name + " 으로 업데이트했습니다");
     }
 
     // ================================================================ 도우미

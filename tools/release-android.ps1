@@ -17,15 +17,24 @@ $vc = [regex]::Match($gradle, 'versionCode\s*=\s*(\d+)').Groups[1].Value
 $vn = [regex]::Match($gradle, 'versionName\s*=\s*"([^"]+)"').Groups[1].Value
 if (-not $vc -or -not $vn) { Fail "app\build.gradle.kts 에서 versionCode / versionName 을 찾지 못했습니다." }
 
-Step "$Name $vn ($vc) 릴리스"
 Assert-Gh
-Assert-NewTag "$App-v$vn"
-git -C $Root pull --ff-only -q 2>$null   # 지난 릴리스 정보를 최신으로
-$prev = Join-Path $Root "manifest\$App.json"
-if (Test-Path $prev) {
-    $pvc = [long](([IO.File]::ReadAllText($prev) | ConvertFrom-Json).versionCode)
-    if ([long]$vc -le $pvc) { Fail "versionCode($vc)가 지난 릴리스($pvc)보다 커야 기기가 업데이트를 받습니다. app\build.gradle.kts 에서 올리세요." }
+Assert-Committed $Project
+Set-Undo $Project @('app/build.gradle.kts', 'CHANGELOG.md')
+$gradleFile = Join-Path $Project 'app\build.gradle.kts'
+$prevM = Get-PrevManifest $App
+$pvc = if ($prevM) { [long]$prevM.versionCode } else { 0 }
+# 이번 릴리스 버전 정하기 (이미 올린 버전이면 끝자리 +1 제안, Enter = 그대로)
+$old = $vn
+$vn = Choose-Version $App $vn
+if ($vn -ne $old -or [long]$vc -le $pvc) {
+    $vc = [string]([Math]::Max([long]$vc, $pvc) + 1)
+    Edit-File $gradleFile 'versionCode\s*=\s*\d+' "versionCode = $vc"
+    Edit-File $gradleFile 'versionName\s*=\s*"[^"]+"' "versionName = `"$vn`""
+    Say "app\build.gradle.kts 를 고쳤습니다: $vn ($vc)"
 }
+Ensure-Changelog $Project $vn $prevM
+Step "$Name $vn ($vc) 릴리스"
+Assert-NewTag "$App-v$vn"
 
 # ---------------------------------------------------------------- SDK / JDK
 $sdk = $null
@@ -74,4 +83,6 @@ Copy-Item $src $out -Force
 
 # ---------------------------------------------------------------- 올리기
 $notes = Get-Notes (Join-Path $Project 'CHANGELOG.md') $vn
+Clear-Undo   # 여기부터는 올라가므로 되돌리지 않는다
 Publish-Release -App $App -Name $Name -Platform 'android' -Version $vn -VersionCode ([long]$vc) -File $out -Notes $notes
+Commit-Version $Project @('app/build.gradle.kts', 'CHANGELOG.md') $vn

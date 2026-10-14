@@ -1,7 +1,7 @@
 // 공통 앱 업데이터 (윈도우).
 //
 // 원본: app-releases/client/windows/AppUpdater.cs — 고칠 때는 원본을 고치고
-// app-releases/sync-clients.bat 으로 모든 프로그램에 다시 복사한다.
+// app-releases/9-1_공통업데이터복사.bat 으로 모든 프로그램에 다시 복사한다.
 //
 // 공개 저장소 tohinata/app-releases 의 manifest/<앱키>.json 을 읽어 지금보다 새 버전이면 묻고,
 // 「예」면 업데이트 스크립트(PowerShell)를 띄운 뒤 프로그램을 닫는다. 스크립트가

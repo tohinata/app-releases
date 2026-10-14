@@ -1,4 +1,4 @@
-﻿# 릴리스 저장소를 쓰는 앱 목록. 새 앱을 붙이면 여기에 한 줄 추가하고 sync-clients.bat 을 실행한다.
+﻿# 릴리스 저장소를 쓰는 앱 목록. 새 앱을 붙이면 여기에 한 줄 추가하고 9-1_공통업데이터복사.bat 을 실행한다.
 #   Key     : 릴리스 태그 · manifest 이름 (소문자)
 #   Folder  : repos 아래 프로젝트 폴더
 #   Package : (안드로이드) 패키지 — AppUpdater.kt 가 <Package>.update 로 들어간다

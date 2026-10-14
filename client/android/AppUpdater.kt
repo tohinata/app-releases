@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicBoolean
  * 공통 앱 업데이터 (안드로이드).
  *
  * 원본: app-releases/client/android/AppUpdater.kt — 고칠 때는 원본을 고치고
- * app-releases/sync-clients.bat 으로 모든 앱에 다시 복사한다.
+ * app-releases/9-1_공통업데이터복사.bat 으로 모든 앱에 다시 복사한다.
  *
  * 공개 저장소 tohinata/app-releases 의 manifest/<앱키>.json 을 읽어
  * 지금보다 versionCode 가 크면 「업데이트」를 묻고, APK 를 받아 확인(SHA-256 · 패키지 이름)한 뒤
@@ -66,6 +66,7 @@ object AppUpdater {
         track(activity)
         if (checkedThisRun) return
         checkedThisRun = true
+        reportUpdated(activity)
         check(activity, appKey, manual = false)
     }
 
@@ -210,7 +211,7 @@ object AppUpdater {
             main.post {
                 try { dialog.dismiss() } catch (_: Exception) {}
                 when {
-                    error == null -> install(activity, file)
+                    error == null -> install(activity, file, info)
                     error.isNotEmpty() -> toast(activity.applicationContext, error)
                 }
             }
@@ -289,7 +290,7 @@ object AppUpdater {
     }
 
     /** 받은 APK 를 설치 세션에 넣는다. 화면이 회전 · 종료돼도 진행되도록 앱 Context 만 쓴다. */
-    private fun install(activity: Activity, file: File) {
+    private fun install(activity: Activity, file: File, info: Info) {
         val pm = activity.applicationContext.packageManager
 
         @Suppress("DEPRECATION")
@@ -301,14 +302,17 @@ object AppUpdater {
 
         val ctx = activity.applicationContext
         Thread {
+            val installer = pm.packageInstaller
+            var sessionId = -1
             try {
-                val installer = pm.packageInstaller
                 val params = PackageInstaller.SessionParams(PackageInstaller.SessionParams.MODE_FULL_INSTALL).apply {
                     setAppPackageName(ctx.packageName)
                     // Android 12+: 이 앱이 스스로 설치한 적이 있으면 확인 창 없이 업데이트될 수 있다
                     if (Build.VERSION.SDK_INT >= 31) setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED)
                 }
                 val id = installer.createSession(params)
+                sessionId = id
+                main.post { showInstalling(activity, id, info.versionName) }
                 installer.openSession(id).use { s ->
                     s.openWrite("app.apk", 0, file.length()).use { out ->
                         file.inputStream().use { it.copyTo(out) }
@@ -319,12 +323,79 @@ object AppUpdater {
                     val pi = PendingIntent.getBroadcast(
                         ctx, id, Intent(ctx, UpdateReceiver::class.java).setPackage(ctx.packageName), flags
                     )
+                    // 다음 실행 때 「업데이트했습니다」를 알리려고 적어 둔다
+                    ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit()
+                        .putLong("pendingCode", info.versionCode).putString("pendingName", info.versionName).apply()
                     s.commit(pi.intentSender)
+                    sessionId = -1   // 커밋했으면 결과는 UpdateReceiver 가 받는다
                 }
             } catch (e: Exception) {
-                main.post { toast(ctx, "설치를 시작하지 못했습니다: ${e.message}") }
+                // 커밋 전에 실패한 세션은 버린다 (남겨 두면 기기에 쌓인다)
+                if (sessionId != -1) try { installer.abandonSession(sessionId) } catch (_: Exception) {}
+                main.post { hideInstalling(); toast(ctx, "설치를 시작하지 못했습니다: ${e.message}") }
             }
         }.start()
+    }
+
+    // ---------------------------------------------------------------- 설치 중 표시 · 끝난 뒤 알림
+    // 설치 확인 창에서 [업데이트]를 누른 뒤에도 설치는 몇 초~수십 초 걸린다. 그동안 「설치 중」 창을 띄워 두고,
+    // 설치가 끝나면 안드로이드가 이 앱을 닫는다. 다시 열면 「업데이트했습니다」를 알려 준다.
+
+    private const val PREFS = "app_updater"
+    private var installingDialog: AlertDialog? = null
+
+    private fun showInstalling(activity: Activity, sessionId: Int, versionName: String) {
+        val a = resumed?.get()?.takeIf { !it.isFinishing && !it.isDestroyed } ?: activity
+        if (a.isFinishing || a.isDestroyed) return
+        hideInstalling()
+        val pad = (20 * a.resources.displayMetrics.density).toInt()
+        val label = TextView(a).apply {
+            text = "새 버전 $versionName 을(를) 설치하고 있습니다.\n\n" +
+                "· 설치 확인 창이 뜨면 [업데이트]를 누르세요.\n" +
+                "· 끝나면 앱이 저절로 닫힙니다. 아이콘을 눌러 다시 여세요."
+        }
+        val bar = ProgressBar(a, null, android.R.attr.progressBarStyleHorizontal).apply { isIndeterminate = true }
+        val box = LinearLayout(a).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(pad, pad / 2, pad, 0)
+            addView(label)
+            addView(bar)
+        }
+        installingDialog = AlertDialog.Builder(a)
+            .setTitle("업데이트 설치 중")
+            .setView(box)
+            .setCancelable(false)
+            .setNegativeButton("숨기기", null)
+            .show()
+
+        val installer = a.applicationContext.packageManager.packageInstaller
+        installer.registerSessionCallback(object : PackageInstaller.SessionCallback() {
+            override fun onCreated(id: Int) {}
+            override fun onBadgingChanged(id: Int) {}
+            override fun onActiveChanged(id: Int, active: Boolean) {}
+            override fun onProgressChanged(id: Int, progress: Float) {}
+            override fun onFinished(id: Int, success: Boolean) {
+                if (id != sessionId) return
+                installer.unregisterSessionCallback(this)
+                // 성공이면 곧 이 앱이 닫힌다. 취소 · 실패는 UpdateReceiver 가 알려 준다.
+                if (!success) hideInstalling()
+            }
+        }, main)
+    }
+
+    private fun hideInstalling() {
+        try { installingDialog?.dismiss() } catch (_: Exception) {}
+        installingDialog = null
+    }
+
+    /** 지난번에 설치를 시작한 버전으로 바뀌었으면 알려 준다 (취소했으면 조용히 지운다) */
+    private fun reportUpdated(activity: Activity) {
+        val sp = activity.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        val code = sp.getLong("pendingCode", 0)
+        if (code <= 0) return
+        val name = sp.getString("pendingName", "") ?: ""
+        sp.edit().remove("pendingCode").remove("pendingName").apply()
+        if (currentVersionCode(activity) >= code) toast(activity, "새 버전 $name 으로 업데이트했습니다")
     }
 
     // ================================================================ 도우미
@@ -371,7 +442,7 @@ class UpdateReceiver : BroadcastReceiver() {
                 }
                 if (confirm != null) AppUpdater.showConfirm(context, confirm)
             }
-            PackageInstaller.STATUS_SUCCESS -> Unit
+            PackageInstaller.STATUS_SUCCESS -> Unit   // 곧 앱이 닫힌다
             PackageInstaller.STATUS_FAILURE_ABORTED ->
                 Toast.makeText(context, "업데이트를 취소했습니다", Toast.LENGTH_SHORT).show()
             else -> {
