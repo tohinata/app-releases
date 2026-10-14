@@ -1,0 +1,12 @@
+{
+    "app":  "instaget",
+    "name":  "인스타 받기",
+    "platform":  "android",
+    "version":  "0.1.0",
+    "versionCode":  1,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/instaget-v0.1.0/InstaGet-0.1.0.apk",
+    "sha256":  "10b17a3321603a7e37565349febfb51fc879b2192e0bc86b0c4b5f6dd9ab7231",
+    "size":  6044996,
+    "notes":  "처음 만든 버전.\n\n### 기능\n- 인스타그램 링크(게시물 · 릴스 · IGTV · 스토리 · 하이라이트 · 프로필)를 넣으면 사진 · 동영상 목록을 보여 주고 골라서 저장\n- 붙여넣기 버튼, 복사한 링크 자동 붙여넣기, 인스타 앱의 공유 → 인스타 받기\n- 여러 장 게시물: 전부 받기 / 골라 받기 / 한 장만 받기\n- 스토리 · 하이라이트 · 비공개 계정은 앱 안에서 인스타 로그인 (공식 로그인 페이지, WebView)\n- 프로필 사진 원본 크기 (로그인 시 HD)\n- 캡션 복사, 인스타에서 원본 열기\n- DownloadManager 로 저장 — 사진 Pictures/InstaGet, 동영상 Movies/InstaGet, 알림창 진행률\n- 받은 파일 화면: 사진/동영상 필터, 열기 · 공유 · 원본 보기 · 삭제, 실패 항목 정리\n- 이미 받은 파일 건너뛰기, 가져오면 바로 전부 받기 (설정)\n- 앱 정보 · 수정 이력 화면\n- 광고 없음\n\n### 가져오는 방식\n- 게시물: (로그인 시) 앱 API → 웹 GraphQL → 임베드 페이지 → og 메타 순서로 시도\n- 스토리 · 하이라이트: api/v1/feed/reels_media\n- 프로필: api/v1/users/web_profile_info (+ 로그인 시 users/\u003cid\u003e/info 의 HD 사진)\n\n### 배치 파일\n- install.bat, install-nostream.bat, build-apk.bat, commit.bat, push.bat (따라말해와 같은 방식)",
+    "publishedAt":  "2026-10-14T09:53:05+09:00"
+}
