@@ -2,11 +2,11 @@
     "app":  "autoclicker",
     "name":  "오토클릭",
     "platform":  "android",
-    "version":  "1.12.0",
-    "versionCode":  19,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.12.0/AutoClicker-1.12.0.apk",
-    "sha256":  "4372474f0921b909d423be5bb37c043f74d8c0aa29857d607b1a138cc57bfc38",
-    "size":  821423,
-    "notes":  "- 재생 중 다음에 누를 타겟의 번호 원에 실행까지 남은 시간을 주황 원으로 채워 보여 줌 (1초 이상이면 남은 초도 표시). 0.3초보다 짧은 대기는 표시하지 않음\n- 차례가 온 타겟은 \"실행 중 타겟 흐리게\" 설정이어도 또렷하게",
-    "publishedAt":  "2026-10-14T11:02:57+09:00"
+    "version":  "1.12.1",
+    "versionCode":  20,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.12.1/AutoClicker-1.12.1.apk",
+    "sha256":  "d405f92320d4863b6b540f399510f7495a955ae6cf64d35cb4c61caa7c6104b8",
+    "size":  821411,
+    "notes":  "- 수정 사항 반영",
+    "publishedAt":  "2026-10-14T11:07:18+09:00"
 }
