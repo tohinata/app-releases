@@ -14,6 +14,7 @@
 | [따라말해](apps/midrepeat.md) | 안드로이드 | 0.12.0 | [⬇ MidRepeat-0.12.0.apk](https://github.com/tohinata/app-releases/releases/download/midrepeat-v0.12.0/MidRepeat-0.12.0.apk) |
 | [오토클릭](apps/autoclicker.md) | 안드로이드 | 1.12.1 | [⬇ AutoClicker-1.12.1.apk](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.12.1/AutoClicker-1.12.1.apk) |
 | [인스타 받기](apps/instaget.md) | 안드로이드 | 0.1.0 | [⬇ InstaGet-0.1.0.apk](https://github.com/tohinata/app-releases/releases/download/instaget-v0.1.0/InstaGet-0.1.0.apk) |
+| [비번 금고 모바일](apps/passvaultmobile.md) | 안드로이드 | 0.1.0 | [⬇ PassVaultMobile-0.1.0.apk](https://github.com/tohinata/app-releases/releases/download/passvaultmobile-v0.1.0/PassVaultMobile-0.1.0.apk) |
 | [앱테크 체크](apps/apptech.md) | 안드로이드 | 1.13.0 | [⬇ apptech-app-1.13.0.apk](https://github.com/tohinata/app-releases/releases/download/apptech-v1.13.0/apptech-app-1.13.0.apk) |
 | 도서 서평 관리 | 안드로이드 | - | 아직 없음 |
 | 태그 복사 | 안드로이드 | - | 아직 없음 |
@@ -23,6 +24,7 @@
 | 서평 스튜디오 | 윈도우 | - | 아직 없음 |
 | [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.0 | [⬇ mkvbatchmerger-1.0.0-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.0/mkvbatchmerger-1.0.0-win-x64.zip) |
 | 파일 이름 규칙 | 윈도우 | - | 아직 없음 |
+| 비번 금고 | 윈도우 | - | 아직 없음 |
 | 신장의 야망 16 한자 매뉴얼 | 윈도우 (HTML) | - | 아직 없음 |
 | 댓글 문구 순서 복사기 | 크롬 확장 | - | 아직 없음 |
 | 네이버 페이 URL 파서 | 크롬 확장 | - | 아직 없음 |
