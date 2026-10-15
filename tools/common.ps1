@@ -38,6 +38,14 @@ function Undo-VersionEdits {
     if ($done) { Write-Host "  버전 파일 · CHANGELOG 는 원래대로 되돌렸습니다. 고친 뒤 4-1 을 다시 실행하세요." }
 }
 
+# git · gh 의 출력은 UTF-8 이다. PowerShell 5.1 은 콘솔 코드페이지(CP949)로 읽어 한글이 깨지므로,
+# 출력을 받아 쓰는 동안만 UTF-8 로 읽는다 (끝나면 되돌려서 배치 파일의 한글 출력은 그대로).
+function Invoke-Utf8([scriptblock]$Block) {
+    $old = [Console]::OutputEncoding
+    [Console]::OutputEncoding = New-Object Text.UTF8Encoding($false)
+    try { & $Block } finally { [Console]::OutputEncoding = $old }
+}
+
 function Assert-Gh {
     if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
         Fail "GitHub CLI(gh)가 없습니다.`n         winget install GitHub.cli  로 설치하고, 새 창에서  gh auth login  으로 로그인한 뒤 다시 실행하세요."
@@ -191,7 +199,7 @@ function Ensure-Changelog([string]$Project, [string]$Version, $Prev) {
     foreach ($line in ($text -split "`n")) { if ($line -match '^##\s' -and $line -match [regex]::Escape($Version)) { return } }
 
     $since = if ($Prev -and $Prev.publishedAt) { @("--since=$($Prev.publishedAt)") } else { @('-n', '20') }
-    $log = @(git -C $Project log @since --no-merges --pretty=format:%s 2>$null |
+    $log = @(Invoke-Utf8 { git -C $Project log @since --no-merges --pretty=format:%s 2>$null } |
         Where-Object { $_ -and $_ -notmatch '릴리스 - 버전 올림' })
     $items = if ($log.Count -gt 0) { ($log | ForEach-Object { "- $_" }) -join "`n" } else { "- 수정 사항 반영" }
     $section = "## $Version — $(Get-Date -Format 'yyyy-MM-dd')`n`n$items`n`n"

@@ -46,7 +46,14 @@ object AppUpdater {
 
     private const val MANIFEST = "https://raw.githubusercontent.com/tohinata/app-releases/main/manifest/%s.json"
 
-    private var checkedThisRun = false
+    /**
+     * 마지막으로 실행 때 확인한 시각 (SystemClock.elapsedRealtime).
+     * 예전엔 "프로세스마다 한 번" 이었는데, 접근성 서비스 등으로 프로세스가 계속 살아 있는 앱은
+     * 다시 실행해도 확인하지 않았다. 이제 1분 안에 다시 불릴 때(화면 회전 등)만 건너뛴다.
+     */
+    private var lastLaunchCheck = 0L
+    /** checkOnLaunch 로 한 번 넘어온 앱키 — 백그라운드에서 돌아올 때 자동 확인에 쓴다 */
+    private var autoKey: String? = null
     private val main = Handler(Looper.getMainLooper())
 
     class Info(
@@ -59,13 +66,16 @@ object AppUpdater {
     )
 
     /**
-     * 앱 실행 때 (MainActivity.onCreate). 프로세스마다 한 번만 확인한다 — 화면 회전으로 다시 불려도 괜찮다.
+     * 앱 실행 때 (MainActivity.onCreate) + 화면이 다시 포그라운드로 올라올 때마다 (onActivityResumed 가 자동으로 부른다).
+     * 1분 안에 다시 불리면 건너뛴다 — 화면 회전·설정 복귀처럼 잦은 호출은 걸러진다.
      * 최신이거나 인터넷이 안 되면 아무것도 보이지 않는다.
      */
     fun checkOnLaunch(activity: Activity, appKey: String) {
         track(activity)
-        if (checkedThisRun) return
-        checkedThisRun = true
+        autoKey = appKey
+        val now = android.os.SystemClock.elapsedRealtime()
+        if (lastLaunchCheck != 0L && now - lastLaunchCheck < 60_000) return
+        lastLaunchCheck = now
         reportUpdated(activity)
         check(activity, appKey, manual = false)
     }
@@ -93,6 +103,9 @@ object AppUpdater {
             override fun onActivityResumed(a: Activity) {
                 resumed = WeakReference(a)
                 pendingConfirm?.let { pendingConfirm = null; launchConfirm(a, it) }
+                // 백그라운드에 있다 다시 올라올 때도 새 버전 확인 (onCreate 는 다시 안 불릴 수 있음).
+                // 접근성 서비스 등으로 프로세스가 계속 살아 있는 앱도 이걸로 잡힌다. 60초 throttle 은 checkOnLaunch 안에 있다.
+                autoKey?.let { checkOnLaunch(a, it) }
             }
             override fun onActivityPaused(a: Activity) {
                 if (resumed?.get() === a) resumed = null

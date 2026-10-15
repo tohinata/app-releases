@@ -7,14 +7,16 @@ $AndroidApps = @(
     @{ Key = 'subsyncmobile'; Folder = 'SubSyncMobile'; Package = 'com.coarsoft.subsyncmobile'; Name = '싱크 스튜디오 모바일' },
     @{ Key = 'midrepeat';     Folder = 'MidRepeat';     Package = 'com.coarsoft.midrepeat';     Name = '따라말해' },
     @{ Key = 'autoclicker';   Folder = 'AutoClicker';   Package = 'com.coarsoft.autoclicker';   Name = '오토클릭' },
-    @{ Key = 'instaget';      Folder = 'InstaGet';      Package = 'com.coarsoft.instaget';      Name = '인스타 받기' }
+    @{ Key = 'instaget';      Folder = 'InstaGet';      Package = 'com.coarsoft.instaget';      Name = '인스타 받기' },
+    @{ Key = 'passvaultmobile'; Folder = 'PassVaultMobile'; Package = 'com.coarsoft.passvault'; Name = '정보금고 모바일' }
 )
 $WindowsApps = @(
     @{ Key = 'subsyncstudio';    Folder = 'SubSyncStudio';      Target = 'src\SubSyncStudio\Services\AppUpdater.cs';   Name = '싱크 스튜디오' },
     @{ Key = 'middictation';     Folder = 'MidDictation';       Target = 'src\MidDictation\Services\AppUpdater.cs';    Name = '받아쓰기 스튜디오' },
     @{ Key = 'bookreviewstudio'; Folder = 'BookReviewStudio';   Target = 'BookReviewStudio\AppUpdater.cs';             Name = '서평 스튜디오' },
     @{ Key = 'mkvbatchmerger';   Folder = 'MkvBatchMerger';     Target = 'src\MkvBatchMerger\Services\AppUpdater.cs';  Name = 'MKV 일괄 병합기' },
-    @{ Key = 'mediarenamer';     Folder = 'files-Naming-rules'; Target = 'AppUpdater.cs';                              Name = '파일 이름 규칙' }
+    @{ Key = 'mediarenamer';     Folder = 'files-Naming-rules'; Target = 'AppUpdater.cs';                              Name = '파일 이름 규칙' },
+    @{ Key = 'passvault';        Folder = 'PassVault';          Target = 'src\PassVault\Services\AppUpdater.cs';     Name = '정보금고' }
 )
 # Capacitor(웹앱 + 안드로이드, Java) — AppUpdater.java · UpdateReceiver.java 가 <Package>.update 로
 $JavaApps = @(

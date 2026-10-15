@@ -53,7 +53,10 @@ public final class AppUpdater {
 
     private static final String MANIFEST = "https://raw.githubusercontent.com/tohinata/app-releases/main/manifest/%s.json";
 
-    private static boolean checkedThisRun = false;
+    /** 마지막으로 실행 때 확인한 시각 (elapsedRealtime). 프로세스가 계속 살아 있는 앱도 다시 실행하면 확인하도록 1분 안의 재호출만 건너뛴다. */
+    private static long lastLaunchCheck = 0L;
+    /** checkOnLaunch 로 한 번 넘어온 앱키 — 백그라운드에서 돌아올 때 자동 확인에 쓴다 */
+    private static String autoKey = null;
     private static final Handler main = new Handler(Looper.getMainLooper());
 
     private AppUpdater() {}
@@ -67,11 +70,13 @@ public final class AppUpdater {
         String notes;
     }
 
-    /** 앱 실행 때 (MainActivity.onCreate). 프로세스마다 한 번만 확인한다. 최신이거나 인터넷이 안 되면 조용히 넘어간다. */
+    /** 앱 실행 때 (MainActivity.onCreate) + 화면이 다시 포그라운드로 올라올 때마다 (onActivityResumed 가 자동으로 부름). 1분 안의 재호출(화면 회전 등)만 건너뛴다. 최신이거나 인터넷이 안 되면 조용히 넘어간다. */
     public static void checkOnLaunch(Activity activity, String appKey) {
         track(activity);
-        if (checkedThisRun) return;
-        checkedThisRun = true;
+        autoKey = appKey;
+        long now = android.os.SystemClock.elapsedRealtime();
+        if (lastLaunchCheck != 0L && now - lastLaunchCheck < 60_000) return;
+        lastLaunchCheck = now;
         reportUpdated(activity);
         check(activity, appKey, false);
     }
@@ -102,6 +107,8 @@ public final class AppUpdater {
                     pendingConfirm = null;
                     launchConfirm(a, c);
                 }
+                // 백그라운드에 있다 다시 올라올 때도 새 버전 확인 (onCreate 는 다시 안 불릴 수 있음). 60초 throttle 은 checkOnLaunch 안에 있다.
+                if (autoKey != null) checkOnLaunch(a, autoKey);
             }
             @Override public void onActivityPaused(Activity a) {
                 if (resumed != null && resumed.get() == a) resumed = null;
