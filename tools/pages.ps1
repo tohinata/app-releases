@@ -69,7 +69,17 @@ function Update-Pages {
         $file = [Uri]::UnescapeDataString(("$($m.url)" -split '/')[-1])
         $size = if ($m.size) { ' · {0:0.0}MB' -f ([double]$m.size / 1MB) } else { '' }
         $day = Format-Day $m.publishedAt
-        $rows.Add("| [$($a.Name)](apps/$($a.Key).md) | $($a.Kind) | $($m.version) | [⬇ $file]($($m.url)) |")
+        $pLink = ''
+        $pPage = ''
+        if ($m.portable -and $m.portable.url) {
+            $pFile = [Uri]::UnescapeDataString(("$($m.portable.url)" -split '/')[-1])
+            $pSize = if ($m.portable.size) { ' · {0:0.0}MB' -f ([double]$m.portable.size / 1MB) } else { '' }
+            $pLink = " · [포터블]($($m.portable.url))"
+            $pPage = "## ⬇ [$pFile 받기 (포터블 · exe 하나)]($($m.portable.url))`n`n" +
+                "exe 하나만 받아 아무 폴더(USB 등)에 두고 실행$pSize. 설치 · 압축 풀기 없음. 처음 실행은 몇 초 늦습니다. " +
+                "포터블로 실행하면 업데이트도 포터블 exe 로 받습니다.`n`n"
+        }
+        $rows.Add("| [$($a.Name)](apps/$($a.Key).md) | $($a.Kind) | $($m.version) | [⬇ $file]($($m.url))$pLink |")
 
         $notes = "$($m.notes)".Trim()
         if (-not $notes) { $notes = '-' }
@@ -84,7 +94,7 @@ function Update-Pages {
 
         $md = "# $($a.Name)`n`n" +
             "## ⬇ [$file 받기]($($m.url))`n`n" +
-            "$($a.Kind) · 버전 **$($m.version)**$size · $day`n`n" +
+            "$($a.Kind) · 버전 **$($m.version)**$size · $day`n`n" + $pPage +
             (Get-InstallGuide "$($m.platform)" "$($m.exe)") + "`n`n" +
             "## 바뀐 점 ($($m.version))`n`n$notes`n`n" +
             "## 이전 버전`n`n$hist`n`n" +

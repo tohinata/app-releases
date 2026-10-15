@@ -85,7 +85,8 @@ function Get-Notes([string]$changelog, [string]$version) {
 function Publish-Release {
     param(
         [string]$App, [string]$Name, [string]$Platform, [string]$Version, [long]$VersionCode,
-        [string]$File, [string]$Notes, [string]$Exe = "", [string[]]$Keep = @()
+        [string]$File, [string]$Notes, [string]$Exe = "", [string[]]$Keep = @(),
+        [string]$Portable = ""   # 윈도우: exe 하나짜리 포터블 판 (있으면 같은 릴리스에 같이 올린다)
     )
     $tag = "$App-v$Version"
     $asset = Split-Path -Leaf $File
@@ -95,9 +96,19 @@ function Publish-Release {
     Step "GitHub 에 올리는 중 — $RepoFull  ($tag, $([Math]::Round($size / 1MB, 1))MB)"
     $notesFile = Join-Path $env:TEMP "release-notes-$App.md"
     $dl = "https://github.com/$RepoFull/releases/download/$tag/$asset"
-    $body = "### ⬇ 받기: [$asset]($dl)`n`n" + $(if ($Notes) { $Notes } else { "$Name $Version" })
+    $body = "### ⬇ 받기: [$asset]($dl)`n`n"
+    $files = @($File)
+    if ($Portable) {
+        $pAsset = Split-Path -Leaf $Portable
+        $pSha = (Get-FileHash -LiteralPath $Portable -Algorithm SHA256).Hash.ToLowerInvariant()
+        $pSize = (Get-Item -LiteralPath $Portable).Length
+        $pDl = "https://github.com/$RepoFull/releases/download/$tag/$pAsset"
+        $body += "### ⬇ 포터블 (exe 하나): [$pAsset]($pDl)`n`n"
+        $files += $Portable
+    }
+    $body += $(if ($Notes) { $Notes } else { "$Name $Version" })
     [IO.File]::WriteAllText($notesFile, $body, (New-Object Text.UTF8Encoding($false)))
-    gh release create $tag $File -R $RepoFull --title "$Name $Version" --notes-file $notesFile
+    gh release create $tag @files -R $RepoFull --title "$Name $Version" --notes-file $notesFile
     if ($LASTEXITCODE -ne 0) { Fail "릴리스를 만들지 못했습니다. 위 메시지를 확인하세요." }
     Remove-Item $notesFile -ErrorAction SilentlyContinue
 
@@ -118,6 +129,7 @@ function Publish-Release {
     }
     if ($Exe) { $m.exe = $Exe }
     if ($Keep.Count -gt 0) { $m.keep = $Keep }
+    if ($Portable) { $m.portable = [ordered]@{ url = $pDl; sha256 = $pSha; size = $pSize } }
     $json = ConvertTo-Json -InputObject $m -Depth 4
     $mdir = Join-Path $Root 'manifest'
     New-Item -ItemType Directory -Path $mdir -Force | Out-Null

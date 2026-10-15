@@ -32,6 +32,8 @@ namespace Coarsoft.Update
         public string Notes { get; set; } = "";
         public string Exe { get; set; } = "";
         public string[] Keep { get; set; } = Array.Empty<string>();
+        /// <summary>포터블(exe 하나)로 받을 때 — manifest 의 portable 이 있을 때만.</summary>
+        public bool Portable { get; set; }
     }
 
     public static class AppUpdater
@@ -56,6 +58,33 @@ namespace Coarsoft.Update
                 return Normalize(asm?.GetName().Version ?? new Version(0, 0, 0));
             }
         }
+
+        /// <summary>
+        /// 지금 exe 하나짜리(포터블)로 실행 중인지.
+        /// IncludeAllContentForSelfExtract 로 만든 exe 는 %TEMP% 에 풀어 실행하므로 BaseDirectory 가 exe 폴더와 다르고,
+        /// 그냥 PublishSingleFile 이면 어셈블리 Location 이 비어 있다.
+        /// </summary>
+        public static bool IsPortable
+        {
+            get
+            {
+                try
+                {
+                    var p = Environment.ProcessPath;
+                    if (string.IsNullOrEmpty(p)) return false;
+                    var exeDir = Path.GetFullPath(Path.GetDirectoryName(p) ?? "").TrimEnd('\\', '/');
+                    var baseDir = Path.GetFullPath(AppContext.BaseDirectory).TrimEnd('\\', '/');
+                    if (!string.Equals(exeDir, baseDir, StringComparison.OrdinalIgnoreCase)) return true;
+                    return string.IsNullOrEmpty(Assembly.GetEntryAssembly()?.Location);
+                }
+                catch { return false; }
+            }
+        }
+
+        /// <summary>업데이트할 파일이 놓일 폴더 — 폴더판은 프로그램 폴더, 포터블은 exe 가 있는 폴더.</summary>
+        private static string InstallDir =>
+            (IsPortable ? Path.GetDirectoryName(Environment.ProcessPath) ?? AppContext.BaseDirectory : AppContext.BaseDirectory)
+            .TrimEnd('\\', '/');
 
         /// <summary>새 버전이 있으면 그 정보, 없거나 확인할 수 없으면 null. 예외를 던지지 않는다.</summary>
         public static async Task<UpdateInfo?> CheckAsync(string appKey)
@@ -85,6 +114,19 @@ namespace Coarsoft.Update
                     foreach (var e in k.EnumerateArray())
                         if (e.ValueKind == JsonValueKind.String) list.Add(e.GetString() ?? "");
                     info.Keep = list.ToArray();
+                }
+
+                // 포터블로 실행 중이면 포터블 exe 로 받는다. 그 릴리스에 포터블이 없으면 이번엔 넘어간다
+                // (zip 을 풀어 exe 옆에 폴더째 깔아 버리면 포터블이 아니게 되므로)
+                if (IsPortable)
+                {
+                    if (!r.TryGetProperty("portable", out var pt) || pt.ValueKind != JsonValueKind.Object) return null;
+                    info.Url = Str(pt, "url");
+                    info.Sha256 = Str(pt, "sha256");
+                    info.Size = pt.TryGetProperty("size", out var ps) && ps.ValueKind == JsonValueKind.Number ? ps.GetInt64() : 0;
+                    info.Exe = Path.GetFileName(Environment.ProcessPath ?? "");   // 이름을 바꿔 둔 exe 도 그 이름 그대로 교체
+                    info.Keep = Array.Empty<string>();
+                    info.Portable = true;
                 }
 
                 if (!Version.TryParse(info.Version, out var latest) || info.Url.Length == 0) return null;
@@ -124,7 +166,7 @@ namespace Coarsoft.Update
         {
             try
             {
-                var dir = AppContext.BaseDirectory.TrimEnd('\\', '/');
+                var dir = InstallDir;
                 var exe = info.Exe.Length > 0
                     ? info.Exe
                     : Path.GetFileName(Environment.ProcessPath ?? Process.GetCurrentProcess().MainModule?.FileName ?? "");
@@ -233,8 +275,9 @@ $backups = New-Object System.Collections.ArrayList   # (원래 파일, 백업 �
 $added = New-Object System.Collections.ArrayList     # 새로 생긴 파일
 $ok = $false
 try {
-    # 1) 받기
-    $zip = Join-Path $work 'update.zip'
+    # 1) 받기 (zip = 폴더판, exe = 포터블)
+    $isExe = ([Uri]$Url).AbsolutePath.ToLowerInvariant().EndsWith('.exe')
+    $zip = Join-Path $work $(if ($isExe) { 'update.exe' } else { 'update.zip' })
     $req = [Net.HttpWebRequest]::Create($Url)
     $req.UserAgent = 'coarsoft-updater'
     $req.AllowAutoRedirect = $true
@@ -264,7 +307,12 @@ try {
         if ($h -ne $Sha.ToUpperInvariant()) { throw '받은 파일이 손상되었습니다 (SHA-256 불일치). 다시 시도하세요.' }
     }
     $new = Join-Path $work 'new'
-    [IO.Compression.ZipFile]::ExtractToDirectory($zip, $new)
+    if ($isExe) {
+        New-Item -ItemType Directory -Path $new -Force | Out-Null
+        Copy-Item -LiteralPath $zip -Destination (Join-Path $new $Exe) -Force
+    } else {
+        [IO.Compression.ZipFile]::ExtractToDirectory($zip, $new)
+    }
     # %TEMP% 이 짧은 이름(ABCDEF~1)일 수 있어 실제 긴 경로로 맞춘다 (아래 상대 경로 계산용)
     $new = (Get-Item -LiteralPath $new).FullName.TrimEnd('\')
 
