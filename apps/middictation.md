@@ -1,53 +1,27 @@
 # 받아쓰기 스튜디오
 
-## ⬇ [middictation-0.9.1-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.1/middictation-0.9.1-win-x64.zip)
+## ⬇ [middictation-0.9.2-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-win-x64.zip)
 
-윈도우 · 버전 **0.9.1** · 196.5MB · 2026-10-14
+윈도우 · 버전 **0.9.2** · 196.5MB · 2026-10-16
+
+## ⬇ [middictation-0.9.2-portable.exe 받기 (포터블 · exe 하나)](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-portable.exe)
+
+exe 하나만 받아 아무 폴더(USB 등)에 두고 실행 · 197.9MB. 설치 · 압축 풀기 없음. 처음 실행은 몇 초 늦습니다. 포터블로 실행하면 업데이트도 포터블 exe 로 받습니다.
 
 zip 을 받아 원하는 폴더에 풀고 `MidDictation.exe` 를 실행하세요.
 
 - 「Windows의 PC 보호」 창이 뜨면 [추가 정보] → [실행].
 - 한 번 설치하면 그다음부터는 실행할 때 알아서 업데이트합니다.
 
-## 바뀐 점 (0.9.1)
+## 바뀐 점 (0.9.2)
 
-### Added
-- **학습 종료 마크.** 북마크와 담는 것은 같지만 뜻이 반대다 —
-  북마크는 '또 볼 것', 이건 **'이제 안 볼 것'**
-  - 표시한 문장은 **자동 진행과 앞뒤 이동(`F2` · `F3`)이 건너뛴다.**
-    다 익힌 문장에서 열 번씩 다시 멈추지 않게 하는 것이 이 기능의 전부다
-  - `F9`, 받아쓰기 탭의 `[○ 학습 종료]`, 자막 목록의 `○` 버튼, 우클릭 메뉴 — 네 곳에서 토글
-  - 표시한 줄은 자막 목록에서 **흐리게** 남는다. 지워버리면 되돌릴 방법이 안 보인다
-  - 별표 옆에 나란히 서므로 **색으로 갈랐다** — 별표는 `Warn`(또 볼 것), 체크는 `Ok`(다 익힌 것)
-- **[학습 종료] 탭.** 표시한 문장을 모아 본다 (전체 / 이 영상)
-  - 더블클릭이나 우클릭 메뉴로 그 문장으로 간다. **목록에서 직접 고르는 것은
-    건너뛰기와 무관하게 언제나 통한다** — 건너뛰면 클릭이 먹지 않는 것처럼 보인다
-  - `Ctrl`·`Shift` 로 여러 개 골라 `Del` 로 해제
-  - `[이 영상 전체 해제]` — 체크 버튼이 목록에 촘촘히 있어서 여러 줄을 잘못 누르는 일이 잦다
-- 설정 &gt; 재생 &gt; **학습 종료로 표시한 문장은 건너뛰기** (기본 켬).
-  끄면 표시는 남고 건너뛰지만 않는다
-
-### Design notes
-- **건너뛰기를 자동 진행과 수동 이동에 함께 걸었다.** 자동에만 걸고 `F2`/`F3` 은
-  그대로 두는 쪽도 생각했는데, 규칙이 둘이 되면 "왜 여기서는 건너뛰고 저기서는
-  안 건너뛰나" 를 매번 따져야 한다. 규칙은 하나여야 예측이 된다.
-  목록에서 직접 고르는 것만 예외다
-- **막혔을 때 이유를 말한다.** 뒤쪽이 전부 학습 종료면 `마지막 문장입니다` 가 아니라
-  `뒤쪽은 모두 학습 종료로 표시돼 있습니다` 라고 적는다. "왜 안 넘어가지" 로 끝나면
-  설정에 있는 스위치를 찾을 길이 없다
-- **`DoneButton` 스타일은 `StarButton` 을 물려받지 않는다.** 물려받으면 그쪽의
-  `IsBookmarked` 트리거까지 같이 와서, 북마크한 줄의 체크 버튼이 노란색으로 변한다.
-  템플릿만 같고 트리거는 따로 가야 한다
-- **메모 칸을 두지 않았다.** 남길 말이 있으면 북마크에 담는 편이 맞다.
-  '이제 안 볼 것' 에 메모를 붙이는 것은 앞뒤가 맞지 않는다
-
----
+- 수정 사항 반영
 
 ## 이전 버전
 
 | 버전 | 날짜 |
 |---|---|
-| [0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0](https://github.com/tohinata/app-releases/releases/tag/middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0) | 0001-01-01 |
+| [0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0](https://github.com/tohinata/app-releases/releases/tag/middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0) | 2026-10-15 |
 
 ---
 [← 전체 앱 목록](../README.md)
