@@ -1,4 +1,4 @@
-# 비번 금고
+# 정보금고
 
 ## ⬇ [passvault-0.1.0-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.0/passvault-0.1.0-win-x64.zip)
 
