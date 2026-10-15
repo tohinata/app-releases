@@ -22,7 +22,7 @@
 | [싱크 스튜디오](apps/subsyncstudio.md) | 윈도우 | 0.1.1 | [⬇ subsyncstudio-0.1.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.1/subsyncstudio-0.1.1-win-x64.zip) |
 | [받아쓰기 스튜디오](apps/middictation.md) | 윈도우 | 0.9.1 | [⬇ middictation-0.9.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.1/middictation-0.9.1-win-x64.zip) |
 | 서평 스튜디오 | 윈도우 | - | 아직 없음 |
-| [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.0 | [⬇ mkvbatchmerger-1.0.0-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.0/mkvbatchmerger-1.0.0-win-x64.zip) |
+| [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.1 | [⬇ mkvbatchmerger-1.0.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.1/mkvbatchmerger-1.0.1-win-x64.zip) |
 | 파일 이름 규칙 | 윈도우 | - | 아직 없음 |
 | [정보금고](apps/passvault.md) | 윈도우 | 0.1.0 | [⬇ passvault-0.1.0-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.0/passvault-0.1.0-win-x64.zip) |
 | 신장의 야망 16 한자 매뉴얼 | 윈도우 (HTML) | - | 아직 없음 |
