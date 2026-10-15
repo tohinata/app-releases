@@ -2,11 +2,11 @@
     "app":  "autoclicker",
     "name":  "오토클릭",
     "platform":  "android",
-    "version":  "1.14.0",
-    "versionCode":  22,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.14.0/AutoClicker-1.14.0.apk",
-    "sha256":  "f5ba0248e9d3c0db5709a1c334d40cb6096f2c473daf434156f93e1e7c12650d",
-    "size":  831211,
-    "notes":  "- 예약 하나에 여러 시각 — \u0027정한 시각\u0027 예약에서 주 시각 외에 \u0027추가 시각\u0027 을 더 넣어, 같은 앱·매크로를 하루 여러 번 실행\n  - 예약 편집에서 [＋ 시각 추가] 로 시각을 늘리고 각 시각을 따로 지움. 같은 요일 설정을 그대로 따름\n  - \u0027한 번\u0027 예약은 오늘 남은 추가 시각까지 실행한 뒤 꺼짐, 반복 예약은 매일 모든 시각에 실행",
-    "publishedAt":  "2026-10-15T13:19:52+09:00"
+    "version":  "1.15.0",
+    "versionCode":  23,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.15.0/AutoClicker-1.15.0.apk",
+    "sha256":  "312e42be504457a646afee25b743114200a1e0e48ef64d740eb6226595b3ffde",
+    "size":  831371,
+    "notes":  "- 백그라운드에 있던 앱을 다시 열 때도 새 버전을 확인함. 예전엔 처음 켤 때(onCreate)만 확인해서, 접근성 서비스로 계속 떠 있던 앱은 다시 열어도 업데이트 안내가 안 떴음",
+    "publishedAt":  "2026-10-15T13:52:44+09:00"
 }

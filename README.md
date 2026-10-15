@@ -12,7 +12,7 @@
 |---|---|---|---|
 | [싱크 스튜디오 모바일](apps/subsyncmobile.md) | 안드로이드 | 0.1.1 | [⬇ SubSyncMobile-0.1.1.apk](https://github.com/tohinata/app-releases/releases/download/subsyncmobile-v0.1.1/SubSyncMobile-0.1.1.apk) |
 | [따라말해](apps/midrepeat.md) | 안드로이드 | 0.12.0 | [⬇ MidRepeat-0.12.0.apk](https://github.com/tohinata/app-releases/releases/download/midrepeat-v0.12.0/MidRepeat-0.12.0.apk) |
-| [오토클릭](apps/autoclicker.md) | 안드로이드 | 1.14.0 | [⬇ AutoClicker-1.14.0.apk](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.14.0/AutoClicker-1.14.0.apk) |
+| [오토클릭](apps/autoclicker.md) | 안드로이드 | 1.15.0 | [⬇ AutoClicker-1.15.0.apk](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.15.0/AutoClicker-1.15.0.apk) |
 | [인스타 받기](apps/instaget.md) | 안드로이드 | 0.1.0 | [⬇ InstaGet-0.1.0.apk](https://github.com/tohinata/app-releases/releases/download/instaget-v0.1.0/InstaGet-0.1.0.apk) |
 | [정보금고 모바일](apps/passvaultmobile.md) | 안드로이드 | 0.1.2 | [⬇ PassVaultMobile-0.1.2.apk](https://github.com/tohinata/app-releases/releases/download/passvaultmobile-v0.1.2/PassVaultMobile-0.1.2.apk) |
 | [앱테크 체크](apps/apptech.md) | 안드로이드 | 1.13.0 | [⬇ apptech-app-1.13.0.apk](https://github.com/tohinata/app-releases/releases/download/apptech-v1.13.0/apptech-app-1.13.0.apk) |
