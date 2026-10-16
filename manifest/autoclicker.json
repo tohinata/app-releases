@@ -2,11 +2,11 @@
     "app":  "autoclicker",
     "name":  "오토클릭",
     "platform":  "android",
-    "version":  "1.17.0",
-    "versionCode":  26,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.17.0/AutoClicker-1.17.0.apk",
-    "sha256":  "fd89b9eae4b0cf5a08ce5b0a9233a9a6211e11e594f2ecbf47ba1d92a6950d54",
-    "size":  839787,
-    "notes":  "- 매크로 녹화 — 메인 화면 \u0027● 녹화로 매크로 만들기\u0027. 투명한 막 위에서 탭·드래그로 조작하면 그대로 스텝이 되고(탭→클릭, 드래그→스와이프, 사이 간격은 실제 누른 시간 그대로), \u0027완료\u0027 를 누르면 매크로가 만들어짐. 조작은 아래 앱에 그대로 전달됨\n  - 시작·완료 버튼 조작은 스텝에 안 들어감. \u0027되돌리기\u0027 로 마지막 스텝 취소\n  - 한 손가락만 지원(멀티터치 X), 손을 뗀 순간 앱에 전달되어 약간 지연될 수 있음\n- 플로팅 패널의 설정·저장 팝업이 길어져 키보드에 취소/저장 버튼이 가리던 문제 수정 — 팝업을 위쪽으로 올리고, 내용이 화면 절반을 넘으면 팝업 안에서 스크롤\n- 설정에 \u0027접어도 눈(보이기/숨기기) 버튼 보이기\u0027, \u0027접어도 즐겨찾기 버튼 보이기\u0027 옵션 추가(기본 켜짐) — 켜면 메뉴를 접어도 그 버튼이 남아 바로 쓸 수 있고, 끄면 접을 때 함께 숨음. 패널을 다시 열면 적용\n- 메인 화면 상단 \u0027접근성 설정 열기\u0027 버튼을 \u0027배터리 최적화 제외\u0027 버튼과 한 줄에 나란히 배치",
-    "publishedAt":  "2026-10-16T08:43:07+09:00"
+    "version":  "1.17.1",
+    "versionCode":  27,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.17.1/AutoClicker-1.17.1.apk",
+    "sha256":  "231716e27be31beb69ca4952f572c7f43036773162f1489b3f2aa045a91a30f8",
+    "size":  839731,
+    "notes":  "- 수정 사항 반영",
+    "publishedAt":  "2026-10-16T12:05:03+09:00"
 }
