@@ -1,10 +1,10 @@
 # 싱크 스튜디오
 
-## ⬇ [subsyncstudio-0.1.2-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.2/subsyncstudio-0.1.2-win-x64.zip)
+## ⬇ [subsyncstudio-0.1.3-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.3/subsyncstudio-0.1.3-win-x64.zip)
 
-윈도우 · 버전 **0.1.2** · 177.2MB · 2026-10-16
+윈도우 · 버전 **0.1.3** · 177.2MB · 2026-10-20
 
-## ⬇ [subsyncstudio-0.1.2-portable.exe 받기 (포터블 · exe 하나)](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.2/subsyncstudio-0.1.2-portable.exe)
+## ⬇ [subsyncstudio-0.1.3-portable.exe 받기 (포터블 · exe 하나)](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.3/subsyncstudio-0.1.3-portable.exe)
 
 exe 하나만 받아 아무 폴더(USB 등)에 두고 실행 · 178.7MB. 설치 · 압축 풀기 없음. 처음 실행은 몇 초 늦습니다. 포터블로 실행하면 업데이트도 포터블 exe 로 받습니다.
 
@@ -13,17 +13,30 @@ zip 을 받아 원하는 폴더에 풀고 `SubSyncStudio.exe` 를 실행하세�
 - 「Windows의 PC 보호」 창이 뜨면 [추가 정보] → [실행].
 - 한 번 설치하면 그다음부터는 실행할 때 알아서 업데이트합니다.
 
-## 바뀐 점 (0.1.2)
+## 바뀐 점 (0.1.3)
 
-### Added — 포터블(exe 하나) 판 · 업데이트
-- `4-1_새버전배포.bat` 이 폴더판 zip 과 함께 **포터블 exe**(`subsyncstudio-<버전>-portable.exe`)도 만들어 같은 릴리스에 올린다
-- 포터블로 실행 중이면 업데이트도 **포터블 exe 로** 받아 그 exe 하나만 바꾼다 (폴더판은 지금처럼 zip).
-  어느 쪽으로 실행 중인지는 프로그램이 스스로 알아낸다. exe 이름을 바꿔 둬도 그 이름 그대로 교체
-- 설정 · 작업 백업은 두 판 모두 같은 데이터 폴더라 바꿔 써도 이어진다
+### Added — 텍스트로 자막 목록 만들기
+- 패널 머리의 **[텍스트로 만들기]** (No 칸 · 목록 빈 곳 우클릭 메뉴에도). 대본 · 가사 같은 전체 텍스트를 붙여 넣거나
+  .txt 파일을 열면 **줄바꿈마다 자막 하나**씩 목록을 만든다. 빈 줄은 건너뛴다
+  - 「빈 줄로 나누기」를 켜면 빈 줄 사이의 여러 줄을 자막 하나(두 줄 자막)로
+  - 시간은 첫 자막 시작(기본 0초, [지금 재생 시간] 단추)부터 줄 간격(기본 2초) · 길이(기본 1.8초)로 임시로 넣는다.
+    만든 뒤 재생하며 시작 칸 클릭(1 · 3 키)으로 맞춰 나가면 뒤 줄이 따라온다
+  - 목록이 있으면 「바꾸기 / 뒤에 붙이기」 선택. 만들 자막 수와 시간 범위를 미리 보여 준다. Ctrl+Z 로 되돌린다
+  - 만든 줄에는 수정 표시를 붙이지 않는다 — 이제부터 맞춘 줄에만 표시가 붙는다
+  - **영상 길이**를 넣으면 (영상이 열려 있으면 자동으로 채움) 「영상 길이에 맞춰 고르게 나누기」로
+    간격 = (영상 길이 − 첫 시작 − 끝 여백) ÷ 자막 수, 길이 = 간격의 90% (최대 8초)로 처음 위치를 잡는다.
+    끝 여백은 엔딩 크레딧을 생각해 영상의 3% (최대 60초). 1:23:45 · 45:10 · 초 로 입력
+  - 창을 열 때 클립보드에 여러 줄 텍스트가 있으면 미리 넣어 둔다
+
+### Added — 수정 표시 한 번에 지우기
+- 패널 머리의 **[표시 지우기]** — 모든 줄의 수정 표시(시작 · 종료 · 텍스트 마크)를 한 번에 지운다.
+  시간 · 텍스트는 그대로, Ctrl+Z 로 되돌린다. 한 줄만은 지금처럼 No 칸 우클릭
 
 ## 이전 버전
 
-없음
+| 버전 | 날짜 |
+|---|---|
+| [0.1.3 autoclicker-v1.17.1 autoclicker-v1.17.0 autoclicker-v1.16.1 middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0](https://github.com/tohinata/app-releases/releases/tag/subsyncstudio-v0.1.3 autoclicker-v1.17.1 autoclicker-v1.17.0 autoclicker-v1.16.1 middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0) | 2026-10-19 |
 
 ---
 [← 전체 앱 목록](../README.md)
