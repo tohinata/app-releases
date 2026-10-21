@@ -2,11 +2,11 @@
     "app":  "tinyfarm",
     "name":  "타이니팜 플랫",
     "platform":  "android",
-    "version":  "1.0.2",
-    "versionCode":  3,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/tinyfarm-v1.0.2/TinyFarm-1.0.2.apk",
-    "sha256":  "514e69c89dff64ae01d7455a981f43a7302ae44dbc78312502bc322288d6d242",
-    "size":  3737241,
+    "version":  "1.0.3",
+    "versionCode":  4,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/tinyfarm-v1.0.3/TinyFarm-1.0.3.apk",
+    "sha256":  "6d440c507a77b303421fa4d2608a97c914a6880553a6e65e5b0a3a8067e10a94",
+    "size":  3743133,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-21T13:03:48+09:00"
+    "publishedAt":  "2026-10-21T14:22:04+09:00"
 }
