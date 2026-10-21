@@ -2,11 +2,11 @@
     "app":  "autoclicker",
     "name":  "오토클릭",
     "platform":  "android",
-    "version":  "1.17.2",
-    "versionCode":  28,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.17.2/AutoClicker-1.17.2.apk",
-    "sha256":  "41b048b73db86c5c6a6636e6f2c4873fd1c93dd23d024872147cb1d9d60aa18b",
-    "size":  839743,
-    "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-21T18:01:35+09:00"
+    "version":  "1.18.0",
+    "versionCode":  29,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.18.0/AutoClicker-1.18.0.apk",
+    "sha256":  "e0e96b52aee67001061b124b290c6b3afe1a5a7b175dbaf005c24bb508ac3b3d",
+    "size":  842311,
+    "notes":  "- 예약 \u0027추가 시각\u0027 기능 실제 반영 — 예전 1.14.0 에 적었지만 코드가 빠진 채 배포됐던 것을 다시 넣음. \u0027정해진 시각\u0027 예약에서 주 시각 외에 \u0027＋ 시각 추가\u0027 로 같은 요일에 더 실행할 시각을 여러 개 넣을 수 있음\n  - 각 시각은 \u0027삭제\u0027 로 개별 제거. 목록 제목에 여러 시각이 함께 보이고 \u0027하루 N번\u0027 표시\n  - \u0027한 번\u0027 예약은 오늘 남은 추가 시각까지 실행한 뒤 꺼짐, 반복 예약은 매일 모든 시각에 실행",
+    "publishedAt":  "2026-10-21T18:06:54+09:00"
 }
