@@ -2,11 +2,11 @@
     "app":  "tinyfarmpc",
     "name":  "타이니팜 플랫 PC",
     "platform":  "web",
-    "version":  "1.0.2",
+    "version":  "1.0.3",
     "versionCode":  0,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/tinyfarmpc-v1.0.2/tinyfarmpc-1.0.2.zip",
-    "sha256":  "1548802d592035b2cf7e7c5ecdb6c40ea470ca23ab97e9fe283ae3d28b022497",
-    "size":  149096,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/tinyfarmpc-v1.0.3/tinyfarmpc-1.0.3.zip",
+    "sha256":  "26e7aa0b0a5a65b04fc172c96916c495a9ab7aa4d05ad994beb52a5831e87aeb",
+    "size":  155029,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-21T13:03:39+09:00"
+    "publishedAt":  "2026-10-21T14:21:54+09:00"
 }
