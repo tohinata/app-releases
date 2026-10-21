@@ -23,11 +23,13 @@ $JavaApps = @(
     @{ Key = 'apptech';       Folder = 'apptech-app';          Package = 'com.apptech.checker';       Name = '앱테크 체크' },
     @{ Key = 'bookreviewapp'; Folder = 'bookReview-app';       Package = 'com.coarsoft.bookreview';   Name = '도서 서평 관리' },
     @{ Key = 'tagcopy';       Folder = 'tossQuiz-app';         Package = 'com.coarsoft.tagcopy';      Name = '태그 복사' },
-    @{ Key = 'riichiguide';   Folder = 'riichi-mahjong-guide'; Package = 'com.coarsoft.riichiscorer'; Name = '리치 마작 가이드' }
+    @{ Key = 'riichiguide';   Folder = 'riichi-mahjong-guide'; Package = 'com.coarsoft.riichiscorer'; Name = '리치 마작 가이드' },
+    @{ Key = 'tinyfarm';      Folder = 'TinyFarm';             Package = 'com.coarsoft.tinyfarm';     Name = '타이니팜 플랫' }
 )
 # 폴더째 배포하는 HTML 앱 — update.ps1 이 프로젝트 폴더로
 $WebApps = @(
-    @{ Key = 'nobunaga16'; Folder = 'nobunaga-manual'; Name = '신장의 야망 16 한자 매뉴얼' }
+    @{ Key = 'nobunaga16'; Folder = 'nobunaga-manual'; Name = '신장의 야망 16 한자 매뉴얼' },
+    @{ Key = 'tinyfarmpc'; Folder = 'TinyFarm\pc'; Name = '타이니팜 플랫 PC' }
 )
 # 크롬 확장 — update-check.js 가 프로젝트 폴더로 (새 버전 알림까지)
 $ChromeApps = @(
