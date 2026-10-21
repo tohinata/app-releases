@@ -1,0 +1,48 @@
+# 타이니팜 플랫 PC
+
+## ⬇ [tinyfarmpc-1.0.0.zip 받기](https://github.com/tohinata/app-releases/releases/download/tinyfarmpc-v1.0.0/tinyfarmpc-1.0.0.zip)
+
+윈도우 (HTML) · 버전 **1.0.0** · 0.1MB · 2026-10-21
+
+zip 을 받아 원하는 폴더에 풀고 `1-1_실행.bat` 을 실행하세요.
+
+- 한 번 설치하면 그다음부터는 실행할 때 알아서 업데이트합니다.
+
+## 바뀐 점 (1.0.0)
+
+- 첫 버전 「타이니팜 플랫」: 타이니팜의 즐길 거리를 메뉴 · 버튼으로
+  - 동물 교배 · 성장 · 판매 (같은 계열이면 색이 달라도 교배 — 흰 양 × 갈색 양은 둘 중 하나만, 다음 단계는 같은 동물끼리), 동물 도감 1,148종 (타이니팜 리마스터 공식 교배 확률표 기준)
+  - 타이니 팜 · 사파리 · 비치 세 구역 — 구역마다 레벨 · 마리 수 · 축사 · 상점 동물
+  - 애정 주기 (10분마다 1 충전) · 동물 애정 레벨 · 계열 마스터리 1~10 과 벨 보상
+  - 밭: 원작 작물 17종, 창고에서 팔기 · 사료로 바꾸기
+  - 요리 공방 (재료 손질 · 요리 · 특별 요리, 요리 도감), 바다 관리소 (잠수 · 해산물), 모험가의 오두막 (모험 · 마스터리)
+  - 야생 동물 길들이기, 교배소 알 · 영롱한 알 · 럭키백, 벨로 바로 끝내기
+  - 벤의 퀘스트, 일일 · 주간 · 일반 업적, 플레이 레벨
+  - 교배 · 부화 · 수확 · 요리 · 잠수 · 모험 완료와 야생 동물 방문 알림
+  - 버튼 물결 · 진동, 하트 · 반짝이 · 떠오르는 골드 같은 효과
+  - 동물 1,148종을 이름(종 · 색 · 테마 · 단계)대로 직접 그린 2D 그림으로
+  - 구글 드라이브 저장 파일 동기화 — 시작할 때 이 기기 / 드라이브 데이터 중 고르기, 플레이 중 자동 저장
+  - PC 버전 (HTML 폴더 앱, 크롬 / 엣지 앱 창) — 안드로이드와 같은 저장 파일로 이어서 하기
+  - 알림마다 그림 아이콘 · 상단바 양 아이콘 · 알림 채널
+  - 설정에서 시간 % · 재화 무한 · 직접 입력 · 레벨/구역/마스터리 편집 · 모든 구역 열기
+  - 치트 설정 버튼 하나로 모두 최대 (재화 무한 · 도감 채우기 · 대기 0초 · 레벨/구역/건물/마스터리 최대)
+  - 편집 · 치트 전에 원래 플레이를 자동 보관 → 「원래 플레이로 돌아가기」로 그대로 이어서, 치트 중에는 드라이브에 올리지 않음
+  - 배경음악 · 터치음 · 효과음 (앱에서 직접 만든 소리, src/assets/sound 에 파일을 넣으면 교체) · 설정에서 켜고 끄기 · 크기
+  - 효과 강화: 동물 그림 위에서 하트가 터지고 말랑하게 눌림, 골드·벨이 위쪽 칩으로 날아감, 새 동물은 빛줄기 · 색종이, 레벨 업 색종이
+  - 계열 마스터리 메달 (숫자 · 동/은/금/무지개 · 다음 단계 진행 고리)을 목장 · 도감 · 교배 · 오두막에 표시, 동물 화면은 10칸 단계 표시
+  - 퀘스트 · 업적: 탭마다 「모두 받기」 + 맨 위 「전부 받기」, 탭에 받을 보상 수 표시
+  - 알림 종류별 켜고 끄기 (교배 · 부화 · 수확 · 요리 · 잠수 · 모험 · 야생 동물 · 애정 가득), 바꾸면 예약된 알림도 바로 맞춰짐
+  - 소리 기본 크기 100%
+  - 목장 풍경(동물들이 돌아다니는 보기 전용 화면) — 설정 > 소리 · 효과에서 켜기 (기본 꺼짐), 켜면 위에 고정되고 목록만 스크롤
+  - 설정을 탭으로 나눔 (게임 · 시간 · 소리 · 편집 · 저장 · 정보), 마지막 탭 기억
+  - 모든 화면의 큰 묶음(밭 · 창고 · 교배소 · 부화 · 건물 · 상점 구역 · 도감 계열 · 업적 · 목장 동물)을 접기/펼치기, 상태 기억 · 도감은 모두 접기/펼치기
+  - 계열 이름을 종 이름으로 (양 · 큰뿔양 · 긴꼬리닭 …), 동물 이름은 「색 / 동물」 두 줄
+
+## 이전 버전
+
+| 버전 | 날짜 |
+|---|---|
+| [1.0.0 tinyfarm-v1.0.0 subsyncstudio-v0.1.3 autoclicker-v1.17.1 autoclicker-v1.17.0 autoclicker-v1.16.1 middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0](https://github.com/tohinata/app-releases/releases/tag/tinyfarmpc-v1.0.0 tinyfarm-v1.0.0 subsyncstudio-v0.1.3 autoclicker-v1.17.1 autoclicker-v1.17.0 autoclicker-v1.16.1 middictation-v0.9.2 subsyncstudio-v0.1.2 passvault-v0.1.1 autoclicker-v1.16.0 bookreviewstudio-v1.0.0 mkvbatchmerger-v1.0.1 passvaultmobile-v0.1.3 autoclicker-v1.15.0 autoclicker-v1.14.0 passvaultmobile-v0.1.2 passvaultmobile-v0.1.1 passvault-v0.1.0 passvaultmobile-v0.1.0 autoclicker-v1.12.1 autoclicker-v1.12.0 instaget-v0.1.0 apptech-v1.13.0 riichiguide-v1.4.3 subsyncstudio-v0.1.1 autoclicker-v1.11.0 mkvbatchmerger-v1.0.0 midrepeat-v0.12.0 middictation-v0.9.1 subsyncmobile-v0.1.1 subsyncmobile-v0.1.0) | 2026-10-21 |
+
+---
+[← 전체 앱 목록](../README.md)
