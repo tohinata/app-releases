@@ -1,8 +1,8 @@
 # 오토클릭
 
-## ⬇ [AutoClicker-1.18.0.apk 받기](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.18.0/AutoClicker-1.18.0.apk)
+## ⬇ [AutoClicker-1.19.0.apk 받기](https://github.com/tohinata/app-releases/releases/download/autoclicker-v1.19.0/AutoClicker-1.19.0.apk)
 
-안드로이드 · 버전 **1.18.0** · 0.8MB · 2026-10-21
+안드로이드 · 버전 **1.19.0** · 0.8MB · 2026-10-23
 
 폰에서 이 페이지를 열고 위 링크를 누르면 APK 를 받습니다. 받은 파일을 열어 설치하세요.
 
@@ -13,7 +13,13 @@
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### [1.18.0 — 2026-10-21 (최신)](https://github.com/tohinata/app-releases/releases/tag/autoclicker-v1.18.0)
+### [1.19.0 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/autoclicker-v1.19.0)
+
+- 검은 화면(가짜 잠금) 모드 — 조작 패널의 초승달 버튼을 누르면 화면 전체를 까맣게 덮음. 아몰레드는 까만 픽셀이 꺼져 배터리를 아끼고, 화면은 켜 둔 채 밝기를 최저로 낮춤
+  - 까만 창은 터치를 통과시켜 매크로는 그대로 실행됨. 볼륨 키를 길게(약 0.8초) 누르면 해제
+  - 접근성 서비스가 키 이벤트를 받도록 설정이 바뀜 — 설치 후 접근성에서 '오토클릭' 을 껐다 켜야 적용될 수 있음
+
+### [1.18.0 — 2026-10-21](https://github.com/tohinata/app-releases/releases/tag/autoclicker-v1.18.0)
 
 - 예약 '추가 시각' 기능 실제 반영 — 예전 1.14.0 에 적었지만 코드가 빠진 채 배포됐던 것을 다시 넣음. '정해진 시각' 예약에서 주 시각 외에 '＋ 시각 추가' 로 같은 요일에 더 실행할 시각을 여러 개 넣을 수 있음
   - 각 시각은 '삭제' 로 개별 제거. 목록 제목에 여러 시각이 함께 보이고 '하루 N번' 표시
@@ -36,12 +42,12 @@
 - 설정에 '접어도 눈(보이기/숨기기) 버튼 보이기', '접어도 즐겨찾기 버튼 보이기' 옵션 추가(기본 켜짐) — 켜면 메뉴를 접어도 그 버튼이 남아 바로 쓸 수 있고, 끄면 접을 때 함께 숨음. 패널을 다시 열면 적용
 - 권한 확인 카드의 접근성 서비스 행에도 '설정 열기' 버튼 추가(켜져 있을 때도) — 배터리 최적화 행처럼 바로 설정으로 이동
 
+<details>
+<summary><b>이전 버전 더 보기</b></summary>
+
 ### [1.16.1 — 2026-10-16](https://github.com/tohinata/app-releases/releases/tag/autoclicker-v1.16.1)
 
 - 수정 사항 반영
-
-<details>
-<summary><b>이전 버전 더 보기</b></summary>
 
 ### [1.16.0 — 2026-10-16](https://github.com/tohinata/app-releases/releases/tag/autoclicker-v1.16.0)
 
