@@ -2,11 +2,11 @@
     "app":  "remotehelper",
     "name":  "원격 도우미",
     "platform":  "android",
-    "version":  "0.1.0",
-    "versionCode":  1,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.0/RemoteHelper-0.1.0.apk",
-    "sha256":  "dcd93512ea0c6f385a969978472d5c63a3c3b1cdb1cfbc10d0130277b7fc6815",
-    "size":  748488,
-    "notes":  "- 첫 버전 — 한 앱으로 \u0027도움 받기\u0027(내 화면 보여 주기)와 \u0027도와주기\u0027(다른 폰 조종하기)\n- 화면은 하드웨어 H.264 로 실시간 전송, 회선이 밀리면 화질을 낮춰 지연이 쌓이지 않게\n- 조작은 손가락을 따라 바로 움직이는 실시간 터치(드래그·스크롤·길게 누르기 그대로), 뒤로·홈·최근 앱·알림창·글자 입력·볼륨\n- 처음 보는 기기는 허용해야 연결, 허용한 기기는 다음부터 바로 연결. 연결 중에는 화면 위에 \u0027조종 중 · 끝내기\u0027 표시\n- 중계 서버(Cloudflare Worker) 포함 — 0-2_중계서버배포.bat",
-    "publishedAt":  "2026-10-23T10:06:53+09:00"
+    "version":  "0.1.1",
+    "versionCode":  2,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.1/RemoteHelper-0.1.1.apk",
+    "sha256":  "fb06e6e4711e4351ea60df66c296ebad6f727cf2ca4c40fa78ae738a4fa443ac",
+    "size":  748508,
+    "notes":  "- 수정 사항 반영",
+    "publishedAt":  "2026-10-23T11:31:13+09:00"
 }
