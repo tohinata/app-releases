@@ -2,11 +2,11 @@
     "app":  "authhelper",
     "name":  "인증 도우미",
     "platform":  "android",
-    "version":  "0.1.3",
-    "versionCode":  4,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.3/AuthHelper-0.1.3.apk",
-    "sha256":  "a3e3eac2f95a3a3216151b5e40efb815ed7a1a1c289a8ba9dbabd0e77773cc72",
-    "size":  721101,
+    "version":  "0.1.4",
+    "versionCode":  5,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.4/AuthHelper-0.1.4.apk",
+    "sha256":  "6d2b02e92d698a63be8ac7640bec5a3d35157c3962daaaf17bc0d35bf672dc74",
+    "size":  721105,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-23T10:39:26+09:00"
+    "publishedAt":  "2026-10-23T10:40:49+09:00"
 }
