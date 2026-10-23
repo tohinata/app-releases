@@ -1,8 +1,8 @@
 # 인증 도우미
 
-## ⬇ [AuthHelper-0.1.6.apk 받기](https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.6/AuthHelper-0.1.6.apk)
+## ⬇ [AuthHelper-0.1.7.apk 받기](https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.7/AuthHelper-0.1.7.apk)
 
-안드로이드 · 버전 **0.1.6** · 0.7MB · 2026-10-23
+안드로이드 · 버전 **0.1.7** · 0.7MB · 2026-10-23
 
 폰에서 이 페이지를 열고 위 링크를 누르면 APK 를 받습니다. 받은 파일을 열어 설치하세요.
 
@@ -13,7 +13,11 @@
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### [0.1.6 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.6)
+### [0.1.7 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.7)
+
+- 수정 사항 반영
+
+### [0.1.6 — 2026-10-23](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.6)
 
 - 수정 사항 반영
 
