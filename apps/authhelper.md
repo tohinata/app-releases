@@ -1,8 +1,8 @@
 # 인증 도우미
 
-## ⬇ [AuthHelper-0.1.7.apk 받기](https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.7/AuthHelper-0.1.7.apk)
+## ⬇ [AuthHelper-0.1.8.apk 받기](https://github.com/tohinata/app-releases/releases/download/authhelper-v0.1.8/AuthHelper-0.1.8.apk)
 
-안드로이드 · 버전 **0.1.7** · 0.7MB · 2026-10-23
+안드로이드 · 버전 **0.1.8** · 0.7MB · 2026-10-23
 
 폰에서 이 페이지를 열고 위 링크를 누르면 APK 를 받습니다. 받은 파일을 열어 설치하세요.
 
@@ -13,7 +13,11 @@
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### [0.1.7 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.7)
+### [0.1.8 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.8)
+
+- 수정 사항 반영
+
+### [0.1.7 — 2026-10-23](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.7)
 
 - 수정 사항 반영
 
@@ -28,6 +32,9 @@
 ### [0.1.4 — 2026-10-23](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.4)
 
 - 수정 사항 반영
+
+<details>
+<summary><b>이전 버전 더 보기</b></summary>
 
 ### [0.1.3 — 2026-10-23](https://github.com/tohinata/app-releases/releases/tag/authhelper-v0.1.3)
 
@@ -54,6 +61,8 @@
 - 가족을 추가 · 삭제하면 가족 모두에게 알림 문자
 - 모르는 사람과 통화 중에 인증이 오면 가족에게 알림 문자 (인증번호는 넣지 않음)
 - 인증번호 창의 「OO 에게 문자로 보내기」 버튼으로 방금 통화한 가족(통화 중 또는 끊은 지 10분 안)에게만 바로 전달 — 단문 한 통 (예: [인증도우미] 네이버 인증번호 482193)
+
+</details>
 
 ---
 [← 전체 앱 목록](../README.md)
