@@ -2,11 +2,11 @@
     "app":  "remotehelper",
     "name":  "원격 도우미",
     "platform":  "android",
-    "version":  "0.1.2",
-    "versionCode":  3,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.2/RemoteHelper-0.1.2.apk",
-    "sha256":  "41480794f1d1fd0277a9620983962efd6ebea798348428ac5dfeb0a316961356",
-    "size":  748512,
+    "version":  "0.1.3",
+    "versionCode":  4,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.3/RemoteHelper-0.1.3.apk",
+    "sha256":  "6f3e922c7164e031a0d72aed9700f434cdaa0315eb9f1609826fa77375df5ebc",
+    "size":  748488,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-23T11:33:39+09:00"
+    "publishedAt":  "2026-10-23T11:46:18+09:00"
 }
