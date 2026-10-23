@@ -1,8 +1,8 @@
 # 원격 도우미
 
-## ⬇ [RemoteHelper-0.1.3.apk 받기](https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.3/RemoteHelper-0.1.3.apk)
+## ⬇ [RemoteHelper-0.1.4.apk 받기](https://github.com/tohinata/app-releases/releases/download/remotehelper-v0.1.4/RemoteHelper-0.1.4.apk)
 
-안드로이드 · 버전 **0.1.3** · 0.7MB · 2026-10-23
+안드로이드 · 버전 **0.1.4** · 0.7MB · 2026-10-23
 
 폰에서 이 페이지를 열고 위 링크를 누르면 APK 를 받습니다. 받은 파일을 열어 설치하세요.
 
@@ -13,7 +13,7 @@
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### 0.1.4 — 2026-10-23
+### [0.1.4 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/remotehelper-v0.1.4)
 
 - 화면 구성을 인증 도우미와 같게 — 부모님 화면(간단)과 보호자 화면(탭: 홈 · 도와주기 · 허용 기기 · 설정 · 권한)
   - 보호자 화면 홈에 '처음 설정' 단계 안내(연결 서버 · 화면 조작 허용 · 알림 · 배터리 · 보호자 비밀번호)
@@ -26,7 +26,7 @@
 - 원격 화면(도와주는 쪽)은 테마와 상관없이 늘 어둡게
 - 한 폰에서 '도움 받기' 와 '도와주기' 를 동시에 못 하게 — 도움 받기 중에 다른 폰에 연결하면 먼저 그만할지 묻고, 도와주는 중에는 도움 받기를 시작하지 않음
 
-### [0.1.3 — 2026-10-23 (최신)](https://github.com/tohinata/app-releases/releases/tag/remotehelper-v0.1.3)
+### [0.1.3 — 2026-10-23](https://github.com/tohinata/app-releases/releases/tag/remotehelper-v0.1.3)
 
 - 수정 사항 반영
 
