@@ -22,7 +22,7 @@
 | [태그 복사](apps/tagcopy.md) | 안드로이드 | 1.0.1 | [⬇ tossQuiz-app-1.0.1.apk](https://github.com/tohinata/app-releases/releases/download/tagcopy-v1.0.1/tossQuiz-app-1.0.1.apk) |
 | [리치 마작 가이드](apps/riichiguide.md) | 안드로이드 | 1.4.3 | [⬇ riichi-mahjong-guide-1.4.3.apk](https://github.com/tohinata/app-releases/releases/download/riichiguide-v1.4.3/riichi-mahjong-guide-1.4.3.apk) |
 | [타이니팜 플랫](apps/tinyfarm.md) | 안드로이드 | 1.0.3 | [⬇ TinyFarm-1.0.3.apk](https://github.com/tohinata/app-releases/releases/download/tinyfarm-v1.0.3/TinyFarm-1.0.3.apk) |
-| [싱크 스튜디오](apps/subsyncstudio.md) | 윈도우 | 0.1.3 | [⬇ subsyncstudio-0.1.3-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.3/subsyncstudio-0.1.3-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.3/subsyncstudio-0.1.3-portable.exe) |
+| [싱크 스튜디오](apps/subsyncstudio.md) | 윈도우 | 0.1.4 | [⬇ subsyncstudio-0.1.4-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.4/subsyncstudio-0.1.4-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.4/subsyncstudio-0.1.4-portable.exe) |
 | [받아쓰기 스튜디오](apps/middictation.md) | 윈도우 | 0.9.2 | [⬇ middictation-0.9.2-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-portable.exe) |
 | 서평 스튜디오 | 윈도우 | - | 아직 없음 |
 | [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.1 | [⬇ mkvbatchmerger-1.0.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.1/mkvbatchmerger-1.0.1-win-x64.zip) |
