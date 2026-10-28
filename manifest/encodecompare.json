@@ -1,0 +1,18 @@
+{
+    "app":  "encodecompare",
+    "name":  "화질 비교기",
+    "platform":  "windows",
+    "version":  "0.1.0",
+    "versionCode":  0,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.0/encodecompare-0.1.0-win-x64.zip",
+    "sha256":  "26572bb5b8b44b04901545b26f1bd921a4c49b15febb08552ddd3aba74fee099",
+    "size":  184606493,
+    "notes":  "- 처음 만든 판. 원본(A)과 인코딩한 영상(B)을 같이 띄우고 재생 바 하나로 두 영상을 함께 움직인다\n  - 보기 방식 5가지: 나란히 · 위아래 · 슬라이드(가운데 선을 끌어 왼쪽 A / 오른쪽 B) · 번갈아(T 키로 A↔B) · 차이(두 화면이 다른 곳만 밝게)\n  - 마우스 휠로 확대하면 두 영상이 같은 자리를 같이 확대, 끌어서 같이 이동. 2배 이상이면 픽셀 그대로 보기\n  - 1초 · 10초 · 1분 이동(간격은 설정에서), 1프레임 앞뒤, 처음 · 끝, 재생 속도, A-B 구간 반복, 책갈피\n  - 소리는 A 나 B 한쪽만 (Q 키로 바꾸기). 소리 안 나는 쪽이 재생 중에 자동으로 따라와 어긋나지 않게 맞춘다\n  - 영상이 하나만 있어도 일반 플레이어처럼 쓸 수 있다\n  - 길이 · 프레임 속도 · 화면 비율이 다르면 알려 주고, \u0027B 시간 보정\u0027 으로 앞뒤가 잘린 영상도 맞출 수 있다\n  - 원본을 열면 같은 폴더의 인코딩본(예: 이름 [x265].mkv)을 자동으로 찾아 같이 연다 (반대도)\n  - 두 파일을 한꺼번에 끌어다 놓으면 큰 쪽을 원본으로\n  - 정보 패널: 크기 · 길이 · 해상도 · 코덱 · 프레임 속도 · 평균 비트레이트, 용량이 얼마나 줄었는지\n  - 스냅샷(S): 같은 순간의 A · B 화면을 PNG 로 저장\n  - 지난 위치에서 이어 보기, 최근 비교 목록, 전체 화면\n  - 모니터 2개 모드(F12): A 와 B 를 모니터 하나씩 전체 화면으로. 재생 · 이동 · 확대는 두 모니터가 같이 움직이고,\n    마우스를 움직이면 그 모니터 아래에 재생 바가 나온다. 어느 모니터에 A · B 를 띄울지 고를 수 있다 (모니터 2개 ▾)",
+    "publishedAt":  "2026-10-29T08:48:58+09:00",
+    "exe":  "EncodeCompare.exe",
+    "portable":  {
+                     "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.0/encodecompare-0.1.0-portable.exe",
+                     "sha256":  "57c6053ac8c88d6709c1e9edb0720ff73bc26160729df1d3cbdbddb22b082bcc",
+                     "size":  186186977
+                 }
+}
