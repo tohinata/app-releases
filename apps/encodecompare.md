@@ -17,6 +17,10 @@ zip 을 받아 원하는 폴더에 풀고 `EncodeCompare.exe` 를 실행하세�
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
+### [0.1.1 — 2026-10-29](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.1)
+
+- 수정 사항 반영
+
 ### [0.1.0 — 2026-10-28 (최신)](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.0)
 
 - 처음 만든 판. 원본(A)과 인코딩한 영상(B)을 같이 띄우고 재생 바 하나로 두 영상을 함께 움직인다

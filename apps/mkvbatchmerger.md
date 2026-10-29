@@ -1,8 +1,8 @@
 # MKV 일괄 병합기
 
-## ⬇ [mkvbatchmerger-1.0.4-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.4/mkvbatchmerger-1.0.4-win-x64.zip)
+## ⬇ [mkvbatchmerger-1.0.5-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.5/mkvbatchmerger-1.0.5-win-x64.zip)
 
-윈도우 · 버전 **1.0.4** · 57.8MB · 2026-10-28
+윈도우 · 버전 **1.0.5** · 57.8MB · 2026-10-29
 
 zip 을 받아 원하는 폴더에 풀고 `MkvBatchMerger.exe` 를 실행하세요.
 
@@ -13,7 +13,11 @@ zip 을 받아 원하는 폴더에 풀고 `MkvBatchMerger.exe` 를 실행하세�
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### [1.0.4 — 2026-10-28 (최신)](https://github.com/tohinata/app-releases/releases/tag/mkvbatchmerger-v1.0.4)
+### [1.0.5 — 2026-10-29 (최신)](https://github.com/tohinata/app-releases/releases/tag/mkvbatchmerger-v1.0.5)
+
+- 수정 사항 반영
+
+### [1.0.4 — 2026-10-28](https://github.com/tohinata/app-releases/releases/tag/mkvbatchmerger-v1.0.4)
 
 - 수정 사항 반영
 
@@ -29,6 +33,9 @@ zip 을 받아 원하는 폴더에 풀고 `MkvBatchMerger.exe` 를 실행하세�
 
 - 수정 사항 반영
 
+<details>
+<summary><b>이전 버전 더 보기</b></summary>
+
 ### [1.0.0 — 2026-10-14](https://github.com/tohinata/app-releases/releases/tag/mkvbatchmerger-v1.0.0)
 
 - 업데이트 버전 추가
@@ -38,6 +45,8 @@ zip 을 받아 원하는 폴더에 풀고 `MkvBatchMerger.exe` 를 실행하세�
 - 자막 매칭에 접두 숫자·같은 폴더 단계 추가 (a.mkv ↔ a1.srt)
 - 자막 매칭 수정: 이름이 같은 파일 매칭 + 일본어/중국어 화수 + 원본 교체 모드
 - MKV 일괄 병합기 v1.0.0
+
+</details>
 
 ---
 [← 전체 앱 목록](../README.md)
