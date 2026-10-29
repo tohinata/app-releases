@@ -1,10 +1,10 @@
 # 화질 비교기
 
-## ⬇ [encodecompare-0.1.0-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.0/encodecompare-0.1.0-win-x64.zip)
+## ⬇ [encodecompare-0.1.1-win-x64.zip 받기](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-win-x64.zip)
 
-윈도우 · 버전 **0.1.0** · 176.1MB · 2026-10-29
+윈도우 · 버전 **0.1.1** · 176.1MB · 2026-10-29
 
-## ⬇ [encodecompare-0.1.0-portable.exe 받기 (포터블 · exe 하나)](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.0/encodecompare-0.1.0-portable.exe)
+## ⬇ [encodecompare-0.1.1-portable.exe 받기 (포터블 · exe 하나)](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-portable.exe)
 
 exe 하나만 받아 아무 폴더(USB 등)에 두고 실행 · 177.6MB. 설치 · 압축 풀기 없음. 처음 실행은 몇 초 늦습니다. 포터블로 실행하면 업데이트도 포터블 exe 로 받습니다.
 
@@ -17,11 +17,11 @@ zip 을 받아 원하는 폴더에 풀고 `EncodeCompare.exe` 를 실행하세�
 
 제목을 누르면 그 버전 릴리스(설치 파일)로 갑니다.
 
-### [0.1.1 — 2026-10-29](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.1)
+### [0.1.1 — 2026-10-29 (최신)](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.1)
 
 - 수정 사항 반영
 
-### [0.1.0 — 2026-10-28 (최신)](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.0)
+### [0.1.0 — 2026-10-28](https://github.com/tohinata/app-releases/releases/tag/encodecompare-v0.1.0)
 
 - 처음 만든 판. 원본(A)과 인코딩한 영상(B)을 같이 띄우고 재생 바 하나로 두 영상을 함께 움직인다
   - 보기 방식 5가지: 나란히 · 위아래 · 슬라이드(가운데 선을 끌어 왼쪽 A / 오른쪽 B) · 번갈아(T 키로 A↔B) · 차이(두 화면이 다른 곳만 밝게)
