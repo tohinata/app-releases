@@ -25,7 +25,7 @@
 | [싱크 스튜디오](apps/subsyncstudio.md) | 윈도우 | 0.1.4 | [⬇ subsyncstudio-0.1.4-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.4/subsyncstudio-0.1.4-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/subsyncstudio-v0.1.4/subsyncstudio-0.1.4-portable.exe) |
 | [받아쓰기 스튜디오](apps/middictation.md) | 윈도우 | 0.9.2 | [⬇ middictation-0.9.2-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/middictation-v0.9.2/middictation-0.9.2-portable.exe) |
 | 서평 스튜디오 | 윈도우 | - | 아직 없음 |
-| [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.5 | [⬇ mkvbatchmerger-1.0.5-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.5/mkvbatchmerger-1.0.5-win-x64.zip) |
+| [MKV 일괄 병합기](apps/mkvbatchmerger.md) | 윈도우 | 1.0.6 | [⬇ mkvbatchmerger-1.0.6-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.6/mkvbatchmerger-1.0.6-win-x64.zip) |
 | 파일 이름 규칙 | 윈도우 | - | 아직 없음 |
 | [정보금고](apps/passvault.md) | 윈도우 | 0.1.1 | [⬇ passvault-0.1.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.1/passvault-0.1.1-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.1/passvault-0.1.1-portable.exe) |
 | [화질 비교기](apps/encodecompare.md) | 윈도우 | 0.1.1 | [⬇ encodecompare-0.1.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-portable.exe) |
