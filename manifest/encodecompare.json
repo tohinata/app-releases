@@ -2,17 +2,17 @@
     "app":  "encodecompare",
     "name":  "화질 비교기",
     "platform":  "windows",
-    "version":  "0.1.1",
+    "version":  "0.1.2",
     "versionCode":  0,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-win-x64.zip",
-    "sha256":  "2ea494339264cdb10813671b0c37798e6961e2400339b814d9eddb2fb392b661",
-    "size":  184606517,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.2/encodecompare-0.1.2-win-x64.zip",
+    "sha256":  "72feb2068ed01aebc15ce4971c3bf1d91dcb57aad2cb1aaa483f0273a89c19e1",
+    "size":  184641532,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-10-29T10:47:09+09:00",
+    "publishedAt":  "2026-10-29T15:48:09+09:00",
     "exe":  "EncodeCompare.exe",
     "portable":  {
-                     "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.1/encodecompare-0.1.1-portable.exe",
-                     "sha256":  "89ce201df7d86e15583dbd1b3b08e58f09e7fc267c8b9a3f439bdf32d29183fa",
-                     "size":  186186997
+                     "url":  "https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.2/encodecompare-0.1.2-portable.exe",
+                     "sha256":  "d0c40262a21679c573318ba2a7b6d2b970afdb9a57d4e86a93a184e404676426",
+                     "size":  186222308
                  }
 }
