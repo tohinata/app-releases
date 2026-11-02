@@ -29,6 +29,7 @@
 | 파일 이름 규칙 | 윈도우 | - | 아직 없음 |
 | [정보금고](apps/passvault.md) | 윈도우 | 0.1.1 | [⬇ passvault-0.1.1-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.1/passvault-0.1.1-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/passvault-v0.1.1/passvault-0.1.1-portable.exe) |
 | [화질 비교기](apps/encodecompare.md) | 윈도우 | 0.1.2 | [⬇ encodecompare-0.1.2-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.2/encodecompare-0.1.2-win-x64.zip) · [포터블](https://github.com/tohinata/app-releases/releases/download/encodecompare-v0.1.2/encodecompare-0.1.2-portable.exe) |
+| [영상 이름표](apps/videonamer.md) | 윈도우 | 0.1.0 | [⬇ videonamer-0.1.0-win-x64.zip](https://github.com/tohinata/app-releases/releases/download/videonamer-v0.1.0/videonamer-0.1.0-win-x64.zip) |
 | 신장의 야망 16 한자 매뉴얼 | 윈도우 (HTML) | - | 아직 없음 |
 | [타이니팜 플랫 PC](apps/tinyfarmpc.md) | 윈도우 (HTML) | 1.0.3 | [⬇ tinyfarmpc-1.0.3.zip](https://github.com/tohinata/app-releases/releases/download/tinyfarmpc-v1.0.3/tinyfarmpc-1.0.3.zip) |
 | 댓글 문구 순서 복사기 | 크롬 확장 | - | 아직 없음 |
