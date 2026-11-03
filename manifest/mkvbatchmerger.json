@@ -2,12 +2,12 @@
     "app":  "mkvbatchmerger",
     "name":  "MKV 일괄 병합기",
     "platform":  "windows",
-    "version":  "1.0.13",
+    "version":  "1.0.14",
     "versionCode":  0,
-    "url":  "https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.13/mkvbatchmerger-1.0.13-win-x64.zip",
-    "sha256":  "f33c7ea5f093c9b72d275d190f95ce2b627df0bc0c4f2b9c070bd4f9e9f7f6f4",
-    "size":  60615239,
+    "url":  "https://github.com/tohinata/app-releases/releases/download/mkvbatchmerger-v1.0.14/mkvbatchmerger-1.0.14-win-x64.zip",
+    "sha256":  "5b443448bc7f783b64ca4d3491301857e0bc0988a0b17e40ea2d5e2c03faaf46",
+    "size":  60617044,
     "notes":  "- 수정 사항 반영",
-    "publishedAt":  "2026-11-03T12:09:21+09:00",
+    "publishedAt":  "2026-11-03T12:21:48+09:00",
     "exe":  "MkvBatchMerger.exe"
 }
